@@ -74,22 +74,22 @@ public class GUITest extends JFrame implements ActionListener {
 
             switch (IndexTest) {
                 case "ArtikelKaufenTest":
-                    suites.add(TestLoction + "\\XMLDate\\ArtikelKaufenTest.xml");
+                    suites.add(TestLoction + "\\XMLFile\\ArtikelKaufenTest.xml");
                     break;
                 case "LoginTest":
-                    suites.add(TestLoction + "\\XMLDate\\LoginTest.xml");
+                    suites.add(TestLoction + "\\XMLFile\\LoginTest.xml");
                     System.out.println(IndexTest);
                     break;
                 case "RegisterTest":
-                    suites.add(TestLoction + "\\XMLDate\\RegisterTest.xml");
+                    suites.add(TestLoction + "\\XMLFile\\RegisterTest.xml");
                     System.out.println(IndexTest);
                     break;
                 case "GesamteTest":
-                    suites.add(TestLoction + "\\XMLDate\\GesamteTest.xml");
+                    suites.add(TestLoction + "\\XMLFile\\GesamteTest.xml");
                     System.out.println(IndexTest);
                     break;
                 case "CheckoutTest":
-                    suites.add(TestLoction + "\\XMLDate\\CheckoutTest.xml");
+                    suites.add(TestLoction + "\\XMLFile\\CheckoutTest.xml");
                     System.out.println(IndexTest);
                     break;
                 default:
