@@ -4,21 +4,19 @@ import HelfMethoden.LoadData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
+
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ISelect;
+
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+
 
 public class CheckoutPage extends MainPageBase {
 
-    private String Country = LoadData.userData.getProperty("Country");
-    private String StateProvince = LoadData.userData.getProperty("StateProvince");
-    private String ZipPostalCode = LoadData.userData.getProperty("ZipPostalCode");
+    private final String Country = LoadData.userData.getProperty("Country");
+    private final String StateProvince = LoadData.userData.getProperty("StateProvince");
+    private final String ZipPostalCode = LoadData.userData.getProperty("ZipPostalCode");
 
     public CheckoutPage(WebDriver driver) {
         super(driver);

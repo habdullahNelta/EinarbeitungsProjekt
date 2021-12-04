@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class ArtikelKaufenTest extends TestBase {
 
-    private ArtikelKaufen Books;
+     ArtikelKaufen Books;
     LoginPage Login;
     VerifyPreisPage Preise;
 

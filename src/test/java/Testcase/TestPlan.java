@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
  * @author Hasan Abdullah
  */
 public class TestPlan extends TestBase {
-    private RegisterPage Register;
-    private LoginPage Login;
-    private ArtikelKaufen Books;
-    private VerifyPreisPage Preise;
-    private CheckoutPage Checkout;
+     RegisterPage Register;
+     LoginPage Login;
+     ArtikelKaufen Books;
+     VerifyPreisPage Preise;
+     CheckoutPage Checkout;
 
 
 

@@ -39,13 +39,13 @@ public class VerifyPreisPage extends MainPageBase {
     WebElement ShoppingCard ;
 
 
-    public void ShoppingCardClickPage() throws InterruptedException {
+    public void ShoppingCardClickPage() {
         ShoppingCard.isEnabled();
         ShoppingCard.isDisplayed();
         ShoppingCard.click();
     }
 
-    public void VerifyTolalPreisBook1() throws InterruptedException {
+    public void VerifyTolalPreisBook1() {
         Price[0][0]=Float.parseFloat(OneBook1Price.getText());
         Price[0][1]=Float.parseFloat(QtyBook1Price.getAttribute("value"));
         Price[0][2]=Float.parseFloat(TotalBook1Price.getText());
@@ -70,7 +70,7 @@ public class VerifyPreisPage extends MainPageBase {
       //  Thread.sleep(500);
     }
 
-    public void VerifyTolalPreisBook2(float GegebnePriesBook2) throws InterruptedException {
+    public void VerifyTolalPreisBook2(float GegebnePriesBook2)  {
         //Thread.sleep(1000);
         try {
             TotalBook2Price.isDisplayed();

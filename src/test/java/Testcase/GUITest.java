@@ -12,15 +12,15 @@ import java.util.List;
 
 public class GUITest extends JFrame implements ActionListener {
 
-    private OpenFile File;
-    private JLabel Titel;
-    private JButton EXIT;
-    private JButton Eingabe;
-    private JButton DatenOpen;
-    private JButton ReportOpen;
-    private JButton ScreenshotOpen;
-    private String[] TestCases = {"RegisterTest", "LoginTest", "ArtikelKaufenTest","CheckoutTest", "GesamteTest" };
-    private JComboBox<String> CompoBoxOfTestCases;
+     OpenFile File;
+     JLabel Titel;
+     JButton EXIT;
+     JButton Eingabe;
+     JButton DatenOpen;
+     JButton ReportOpen;
+     JButton ScreenshotOpen;
+     String[] TestCases = {"RegisterTest", "LoginTest", "ArtikelKaufenTest","CheckoutTest", "GesamteTest" };
+     JComboBox<String> CompoBoxOfTestCases;
 
     public void MainGUI1() {
 

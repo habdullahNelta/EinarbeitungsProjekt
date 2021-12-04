@@ -1,14 +1,10 @@
 package Pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
-import java.lang.reflect.Field;
-import java.util.concurrent.TimeUnit;
 
 public class ArtikelKaufen extends MainPageBase {
     public ArtikelKaufen(WebDriver driver) {

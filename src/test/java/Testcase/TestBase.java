@@ -90,7 +90,7 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void tearDown(ITestResult result) throws InterruptedException {
+    public void tearDown(ITestResult result)  {
 
         // Here will compare if test is failing then only it will enter into if condition
         if (ITestResult.FAILURE == result.getStatus()) {

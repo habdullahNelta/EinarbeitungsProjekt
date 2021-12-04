@@ -17,7 +17,7 @@ import java.util.List;
 public class CheckoutTest extends TestBase {
     ArtikelKaufen Books;
     LoginPage Login;
-    public CheckoutPage Checkout;
+     CheckoutPage Checkout;
     VerifyPreisPage Preise;
 
 
