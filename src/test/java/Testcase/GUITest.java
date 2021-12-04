@@ -23,7 +23,7 @@ public class GUITest extends JFrame implements ActionListener {
     private JComboBox<String> CompoBoxOfTestCases;
 
     public void MainGUI1() {
-//screenshot folder
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Titel = new JLabel("Bitte wählen Sie TestCase aus:");
 
