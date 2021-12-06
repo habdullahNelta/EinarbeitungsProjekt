@@ -27,6 +27,7 @@ public class CheckoutTest extends TestBase {
         Login.login();
     }
 
+
     /*@BeforeTest
     public void BeforeTest1() {
         TestNG Obj = new TestNG();
