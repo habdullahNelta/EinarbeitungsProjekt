@@ -23,4 +23,12 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Build with Maven
-      run: mvn clean verify -Dtestng.dtd.http=true
+      run: mvn clean verify -Dtestng.dtd.http=true   
+-name: report
+uses:peaceiris/actions-gh-pages@v3
+with:
+github_token:${{secrets.GITHUP_TOKEN}}
+publish_dir:.test-output\html\index.html
+
+  
+  
