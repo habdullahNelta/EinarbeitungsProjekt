@@ -1,7 +1,6 @@
 package Testcase;
 
 import HelfMethoden.FormatedDate;
-
 import HelfMethoden.LoadData;
 import HelfMethoden.OpenFile;
 import org.openqa.selenium.OutputType;
