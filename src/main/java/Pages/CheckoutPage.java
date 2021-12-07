@@ -37,7 +37,7 @@ public class CheckoutPage extends MainPageBase {
     @FindBy(id = "checkout")
     WebElement CheckoutButton;
 
-    @FindBy(xpath = "//*[@id=\"billing-buttons-container\"]/input")
+    @FindBy(xpath = "//*[@id=\"billing-buttons-container\"]/input")//--------------------------------input-----------------
     WebElement BillingAddressButton;
 
     @FindBy(xpath = "//*[@id=\"shipping-buttons-container\"]/input")
@@ -46,7 +46,28 @@ public class CheckoutPage extends MainPageBase {
     @FindBy(xpath = "//*[@id=\"shipping-method-buttons-container\"]/input")
     WebElement ShippingMethodButton;
 
+    @FindBy(xpath = "//*[@id=\"payment-method-buttons-container\"]/input")
+    WebElement PaymentMethodButton;
+
+    @FindBy(xpath = "//*[@id=\"payment-info-buttons-container\"]/input")
+    WebElement PaymentInformationButton;
+
+    @FindBy(xpath = "//*[@id=\"checkout-payment-info-load\"]/div/div/div[1]/table/tbody/tr/td/p")
+    WebElement PaymentInformation;
+
+    @FindBy(xpath = "//*[@id=\"confirm-order-buttons-container\"]/input")
+    WebElement ConfirmOrderButton;
+
+    @FindBy(xpath = " /html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/div[1]/strong")
+    WebElement successOrderText;
+
+    @FindBy(xpath = " /html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/div[2]/input")
+    WebElement OrderEnd;
+
+
     public void EstimateShippingPage(WebDriver driver) throws InterruptedException {
+        CheckoutButton.isDisplayed();
+        CheckoutButton.isEnabled();
 
         Thread.sleep(500);
         Select CountryMenu = new Select(driver.findElement(By.id("CountryId")));
@@ -57,10 +78,6 @@ public class CheckoutPage extends MainPageBase {
         Thread.sleep(500);
         System.out.println(StateProvince1.getFirstSelectedOption());
         StateProvince1.selectByVisibleText(StateProvince);
-        /* if (StateProvince1.hashCode(1)) {  //to-do----
-           StateProvince1.selectByVisibleText(StateProvince);
-            System.out.println("Other (Non US)");
-        }*/
        // Thread.sleep(500);
         ZipPostalCode1.clear();
         ZipPostalCode1.sendKeys(ZipPostalCode);
@@ -71,6 +88,7 @@ public class CheckoutPage extends MainPageBase {
 
         System.out.println("Estimate Shipping ist verified");
     }
+
     public void BillingAddressPage() throws InterruptedException {
         Thread.sleep(500);
         BillingAddressButton.isDisplayed();
@@ -82,7 +100,7 @@ public class CheckoutPage extends MainPageBase {
         Thread.sleep(500);
         ShippingAddressButton.isDisplayed();
         ShippingAddressButton.isEnabled();
-        ShippingAddressButton.click();
+       ShippingAddressButton.click();
 
     }
 
@@ -93,5 +111,44 @@ public class CheckoutPage extends MainPageBase {
         ShippingMethodButton.click();
 
     }
+    public void PaymentMethodPage() throws InterruptedException {
+        Thread.sleep(500);
+        PaymentMethodButton.isDisplayed();
+        PaymentMethodButton.isEnabled();
+        PaymentMethodButton.click();
 
+    }
+
+    public void PaymentInformationPage() throws InterruptedException {
+        Thread.sleep(500);
+        PaymentInformation.isDisplayed();
+        System.out.println(PaymentInformation.getText());
+        PaymentInformationButton.isDisplayed();
+        PaymentInformationButton.isEnabled();
+        PaymentInformationButton.click();
+
+    }
+
+    public void ConfirmOrderPage() throws InterruptedException {
+        Thread.sleep(500);
+
+        ConfirmOrderButton.isDisplayed();
+        ConfirmOrderButton.isEnabled();
+        ConfirmOrderButton.click();
+
+    }
+
+    public void successOrderPage () throws InterruptedException {
+        Thread.sleep(500);
+        successOrderText.isDisplayed();
+        System.out.println(successOrderText.getText());
+
+    }
+    public void OrderEndPage () throws InterruptedException {
+        Thread.sleep(500);
+        OrderEnd.isDisplayed();
+        OrderEnd.click();
+
+
+    }
 }

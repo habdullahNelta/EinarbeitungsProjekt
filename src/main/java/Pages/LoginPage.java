@@ -18,7 +18,7 @@ public class LoginPage extends MainPageBase {
     String Email = LoadData.userData.getProperty("Email");
     String Password = LoadData.userData.getProperty("Password");
     //Login Click
-    @FindBy(className = "ico-login")
+    @FindBy(className = "ico-login")//1111111111111
     WebElement login;
 
     //Email-Login Eingabe
@@ -35,9 +35,13 @@ public class LoginPage extends MainPageBase {
     WebElement loginisDisplayed;
 
     public void login() {
+        try{ login.isDisplayed();
+            login.isEnabled();
+        }catch (Exception e){
+            System.out.println("login button menu nicht Enabled");
+        }
         login.click();
-        login.isDisplayed();
-        login.isEnabled();
+
         EmailLogin.sendKeys(Email);
         PassWordLogin.sendKeys(Password);
         loginButton.isDisplayed();

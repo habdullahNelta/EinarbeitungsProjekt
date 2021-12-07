@@ -15,11 +15,11 @@ public class ArtikelKaufenTest extends TestBase {
     VerifyPreisPage Preise;
 
 
-    @BeforeTest
+    /*@BeforeTest
     public void Logintest() {
         Login = new LoginPage(driver);
         Login.login();
-    }
+    }*/
 
     @Test(priority = 1)
     public void AddBook1ToCartTest() throws InterruptedException {

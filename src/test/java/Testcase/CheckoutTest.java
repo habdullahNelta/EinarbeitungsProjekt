@@ -101,4 +101,27 @@ public class CheckoutTest extends TestBase {
         Checkout.ShippingMethodPage();
     }
 
+    @Test (priority = 11)
+    public void PaymentMethodTest() throws InterruptedException {
+        Checkout.PaymentMethodPage();
+    }
+
+    @Test (priority = 12)
+    public void PaymentInformationTest() throws InterruptedException {
+        Checkout.PaymentInformationPage();
+    }
+    @Test (priority = 13)
+    public void ConfirmOrderTest() throws InterruptedException {
+        Checkout.ConfirmOrderPage();
+    }
+
+    @Test (priority = 14)
+    public void successOrderTest() throws InterruptedException {
+        Checkout.successOrderPage();
+    }
+
+    @Test (priority = 15)
+    public void OrderEndTest() throws InterruptedException {
+        Checkout.OrderEndPage();
+    }
 }
