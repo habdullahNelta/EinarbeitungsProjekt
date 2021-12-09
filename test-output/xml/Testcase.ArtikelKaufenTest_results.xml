@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EinarbeitungsProjekt"
+           tests="6"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="11,080">
+    <properties></properties>
+
+
+
+            <testcase
+                name="VerifyPreisBook2"
+                time="0,331"
+                classname="Testcase.ArtikelKaufenTest">
+            </testcase>
+            <testcase
+                name="AddBook2ToCartTest"
+                time="2,094"
+                classname="Testcase.ArtikelKaufenTest">
+            </testcase>
+            <testcase
+                name="UpdateCartTest"
+                time="3,084"
+                classname="Testcase.ArtikelKaufenTest">
+            </testcase>
+            <testcase
+                name="VerifyPreisBook1"
+                time="0,331"
+                classname="Testcase.ArtikelKaufenTest">
+            </testcase>
+            <testcase
+                name="ShoppingCardClickTest"
+                time="2,553"
+                classname="Testcase.ArtikelKaufenTest">
+            </testcase>
+            <testcase
+                name="AddBook1ToCartTest"
+                time="2,687"
+                classname="Testcase.ArtikelKaufenTest">
+            </testcase>
+</testsuite>
