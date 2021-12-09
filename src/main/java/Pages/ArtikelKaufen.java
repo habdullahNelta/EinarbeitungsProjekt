@@ -34,14 +34,14 @@ public class ArtikelKaufen extends MainPageBase {
 
 
     public void AddBooksToCartPage() throws InterruptedException {
-        //openBooksMenu.isDisplayed();
-        //  openBooksMenu.isEnabled();
-        if (openBooksMenu.isDisplayed() && openBooksMenu.isEnabled()) {
-            openBooksMenu.click();
-        }
-        if (AddBook1ToCart.isDisplayed() && AddBook1ToCart.isEnabled()) {
-            AddBook1ToCart.click();
-        }
+        openBooksMenu.isDisplayed();
+          openBooksMenu.isEnabled();
+        openBooksMenu.click();
+
+        AddBook1ToCart.isDisplayed();
+        AddBook1ToCart.isEnabled();
+        AddBook1ToCart.click();
+
 
         Thread.sleep(1000);
         if (AddBookToCartisDisplayed.isDisplayed()) {
@@ -50,8 +50,10 @@ public class ArtikelKaufen extends MainPageBase {
     }
 
     public void AddBooks2ToCartPage() throws InterruptedException {
+        AddBookToCartisDisplayed.isDisplayed();
         AddBook2ToCart.click();
         Thread.sleep(1000);
+
         if (AddBookToCartisDisplayed.isDisplayed()) {
             System.out.println("Add Book2 To Cart ist verified");
         }
@@ -77,7 +79,6 @@ public class ArtikelKaufen extends MainPageBase {
         }
 
         // Thread.sleep(1000);
-
 
     }
 

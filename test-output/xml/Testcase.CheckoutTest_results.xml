@@ -1,68 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="EinarbeitungsProjekt"
-           tests="16"
-           failures="1"
+           tests="15"
+           failures="0"
            errors="0"
            skipped="0"
-           time="16,905">
+           time="16,708">
     <properties></properties>
 
-            <testcase
-                name="quitDriver"
-                time="0,001"
-                classname="Testcase.CheckoutTest">
-
-            <failure type="java.lang.NullPointerException" message="Cannot invoke &quot;org.testng.ITestResult.getStatus()&quot; because &quot;this.result&quot; is null">
-                <![CDATA[java.lang.NullPointerException: Cannot invoke "org.testng.ITestResult.getStatus()" because "this.result" is null
-                Testcase.TestBase.quitDriver(TestBase.java:118)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)java.base/java.lang.reflect.Method.invoke(Method.java:568)org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)org.testng.SuiteRunner.privateRun(SuiteRunner.java:344)org.testng.SuiteRunner.run(SuiteRunner.java:276)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)org.testng.TestNG.runSuitesLocally(TestNG.java:1134)org.testng.TestNG.runSuites(TestNG.java:1063)org.testng.TestNG.run(TestNG.java:1031)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-]]>
-            </failure>
-    </testcase>
 
 
             <testcase
-                name="ConfirmOrderTest"
-                time="0,594"
+                name="VerifyPreisBook2"
+                time="0,375"
                 classname="Testcase.CheckoutTest">
             </testcase>
             <testcase
-                name="UpdateCartTest"
-                time="2,161"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="VerifyPreisBook1"
-                time="0,404"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="AddBook2ToCartTest"
-                time="2,115"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="BillingAddressTest"
-                time="0,633"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="ShippingMethodTest"
-                time="0,584"
+                name="ShippingAddressTest"
+                time="0,605"
                 classname="Testcase.CheckoutTest">
             </testcase>
             <testcase
                 name="PaymentMethodTest"
-                time="0,598"
+                time="0,595"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="UpdateCartTest"
+                time="2,171"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="OrderEndTest"
+                time="0,877"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="ShippingMethodTest"
+                time="0,601"
                 classname="Testcase.CheckoutTest">
             </testcase>
             <testcase
                 name="successOrderTest"
-                time="0,930"
+                time="0,845"
                 classname="Testcase.CheckoutTest">
             </testcase>
             <testcase
-                name="EstimateShippingTest"
-                time="1,976"
+                name="ConfirmOrderTest"
+                time="0,603"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="VerifyPreisBook1"
+                time="0,361"
                 classname="Testcase.CheckoutTest">
             </testcase>
             <testcase
@@ -72,27 +61,27 @@
             </testcase>
             <testcase
                 name="AddBook1ToCartTest"
-                time="2,852"
+                time="2,613"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="EstimateShippingTest"
+                time="2,178"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="BillingAddressTest"
+                time="0,613"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="AddBook2ToCartTest"
+                time="2,094"
                 classname="Testcase.CheckoutTest">
             </testcase>
             <testcase
                 name="ShoppingCardClickTest"
-                time="1,551"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="ShippingAddressTest"
-                time="0,603"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="VerifyPreisBook2"
-                time="0,358"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="OrderEndTest"
-                time="0,900"
+                time="1,532"
                 classname="Testcase.CheckoutTest">
             </testcase>
 </testsuite>

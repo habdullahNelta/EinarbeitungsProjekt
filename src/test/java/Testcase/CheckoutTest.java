@@ -1,19 +1,16 @@
 package Testcase;
 
-import HelfMethoden.LoadData;
+
+import HelfMethoden.TestNGListener;
 import Pages.ArtikelKaufen;
 import Pages.CheckoutPage;
 import Pages.LoginPage;
 import Pages.VerifyPreisPage;
-import org.junit.jupiter.api.BeforeAll;
-import org.testng.TestNG;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
+@Listeners(TestNGListener.class)
 public class CheckoutTest extends TestBase {
     ArtikelKaufen Books;
     LoginPage Login;

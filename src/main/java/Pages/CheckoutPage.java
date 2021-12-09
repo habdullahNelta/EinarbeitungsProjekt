@@ -37,7 +37,7 @@ public class CheckoutPage extends MainPageBase {
     @FindBy(id = "checkout")
     WebElement CheckoutButton;
 
-    @FindBy(xpath = "//*[@id=\"billing-buttons-container\"]/input")//--------------------------------input-----------------
+    @FindBy(xpath = "//*[@id=\"billing-buttons-container\"]/input")
     WebElement BillingAddressButton;
 
     @FindBy(xpath = "//*[@id=\"shipping-buttons-container\"]/input")

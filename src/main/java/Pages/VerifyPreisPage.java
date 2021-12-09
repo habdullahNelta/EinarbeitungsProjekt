@@ -4,6 +4,7 @@ import HelfMethoden.LoadData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class VerifyPreisPage extends MainPageBase {
     public VerifyPreisPage(WebDriver driver) {
@@ -13,7 +14,7 @@ public class VerifyPreisPage extends MainPageBase {
     float[][] Price = new float[2][4];
     /*
     *  ____|Price| Qty |Total |gegeben preis
-    * book1| 00  |  01 |02    |03
+    * book1| 00  | 01  |02    |03
     * book2| 10  | 11  |12    |13
     * */
     //book1
@@ -51,11 +52,19 @@ public class VerifyPreisPage extends MainPageBase {
         Price[0][2]=Float.parseFloat(TotalBook1Price.getText());
         Price[0][3]=Float.parseFloat(LoadData.userData.getProperty("PriceBook1"));
 
-        try {
+        TotalBook1Price.isDisplayed();
+        QtyBook1Price.isDisplayed();
+        OneBook1Price.isDisplayed();
+
+        Assert.assertEquals(Float.parseFloat(OneBook1Price.getText()),Price[0][3]);
+       /* try {
             TotalBook1Price.isDisplayed();
             QtyBook1Price.isDisplayed();
             OneBook1Price.isDisplayed();
-            if (Float.parseFloat(OneBook1Price.getText()) == Price[0][3])    {//---------------
+
+          Assert.assertEquals(Float.parseFloat(OneBook1Price.getText()),Price[0][3]);
+          //
+         if ( Float.parseFloat(OneBook1Price.getText()) == Price[0][3] )    {//---------------
                 System.out.println("Total Price Book1 ist veryfied mit gegeben Preise");
             } else {
                 System.out.println("Total Price Book1 ist nicht veryfied mit gegeben Preise");
@@ -63,7 +72,7 @@ public class VerifyPreisPage extends MainPageBase {
             System.out.println("Total Price Book1 ist existiert und Enabled");
         } catch (Exception e) {
             System.out.println("Total Price Book1 entweder nicht existiert oder nicht Enabled");
-        }
+        }*/
          System.out.println("One Book1 Price: " + Price[0][0] + ", " +
                 " Qty Book1 Price: " +  Price[0][1] + ", " +
                 "  Total Book1 Price:  " +Price[0][2] );
@@ -72,10 +81,14 @@ public class VerifyPreisPage extends MainPageBase {
 
     public void VerifyTolalPreisBook2(float GegebnePriesBook2)  {
         //Thread.sleep(1000);
+        TotalBook2Price.isDisplayed();
+        QtyBook2Price.isDisplayed();
+        OneBook2Price.isDisplayed();
+
+        Assert.assertEquals(Float.parseFloat(OneBook2Price.getText()),GegebnePriesBook2);
+        /*
         try {
-            TotalBook2Price.isDisplayed();
-            QtyBook2Price.isDisplayed();
-            OneBook2Price.isDisplayed();
+
             if (Float.parseFloat(OneBook2Price.getText()) == GegebnePriesBook2) {
                 System.out.println("Total Price Book2 ist veryfied mit gegeben Preise");
             } else {
@@ -84,7 +97,7 @@ public class VerifyPreisPage extends MainPageBase {
             System.out.println("Total Price Book2 ist existiert und Enabled");
         } catch (Exception e) {
             System.out.println("Total Price Book2 entweder nicht existiert oder nicht Enabled");
-        }
+        }*/
         System.out.println("One Book2 Price: " + Float.parseFloat(OneBook2Price.getText()) + ", " +
                 " Qty Book2 Price: " + Float.valueOf(QtyBook2Price.getAttribute("value")) + ", " +
                 "  Total Book2 Price:  " + TotalBook2Price.getText());

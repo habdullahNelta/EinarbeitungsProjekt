@@ -35,11 +35,12 @@ public class LoginPage extends MainPageBase {
     WebElement loginisDisplayed;
 
     public void login() {
-        try{ login.isDisplayed();
-            login.isEnabled();
+        login.isDisplayed();
+        login.isEnabled();
+      /*  try{
         }catch (Exception e){
             System.out.println("login button menu nicht Enabled");
-        }
+        }*/
         login.click();
 
         EmailLogin.sendKeys(Email);
@@ -47,8 +48,11 @@ public class LoginPage extends MainPageBase {
         loginButton.isDisplayed();
         loginButton.isEnabled();
         loginButton.click();
+
         loginisDisplayed.isDisplayed();
         loginisDisplayed.isEnabled();
+
+
        /* if (loginisDisplayed.isDisplayed() && loginisDisplayed.isEnabled()) {
             System.out.println("login ist verified");
         }*/

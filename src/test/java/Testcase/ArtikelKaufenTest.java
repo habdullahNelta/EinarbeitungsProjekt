@@ -1,17 +1,19 @@
 package Testcase;
 
 
+import HelfMethoden.TestNGListener;
 import Pages.ArtikelKaufen;
 import Pages.LoginPage;
 import Pages.VerifyPreisPage;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
+@Listeners(TestNGListener.class)
 public class ArtikelKaufenTest extends TestBase {
 
      ArtikelKaufen Books;
-    LoginPage Login;
+  //  LoginPage Login;
     VerifyPreisPage Preise;
 
 
