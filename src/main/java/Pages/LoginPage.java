@@ -18,7 +18,7 @@ public class LoginPage extends MainPageBase {
     String Email = LoadData.userData.getProperty("Email");
     String Password = LoadData.userData.getProperty("Password");
     //Login Click
-    @FindBy(className = "ico-login")//1111111111111
+    @FindBy(className = "ico-login")
     WebElement login;
 
     //Email-Login Eingabe
@@ -31,7 +31,7 @@ public class LoginPage extends MainPageBase {
     @FindBy(className = "login-button")
     WebElement loginButton;
 
-    @FindBy(xpath = "/html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a")
+    @FindBy(xpath = " /html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a")
     WebElement loginisDisplayed;
 
     public void login() {
@@ -47,8 +47,10 @@ public class LoginPage extends MainPageBase {
         loginButton.isDisplayed();
         loginButton.isEnabled();
         loginButton.click();
-        if (loginisDisplayed.isDisplayed() && loginisDisplayed.isEnabled()) {
+        loginisDisplayed.isDisplayed();
+        loginisDisplayed.isEnabled();
+       /* if (loginisDisplayed.isDisplayed() && loginisDisplayed.isEnabled()) {
             System.out.println("login ist verified");
-        }
+        }*/
     }
 }

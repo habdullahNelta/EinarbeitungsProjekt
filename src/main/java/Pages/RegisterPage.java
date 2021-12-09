@@ -84,9 +84,11 @@ public class RegisterPage extends MainPageBase {
         }
 
         Registerbutton.click();
-       if(RegisterisDisplayed.isDisplayed()&&RegisterisDisplayed.isEnabled()) {
+        RegisterisDisplayed.isDisplayed();
+        RegisterisDisplayed.isEnabled();
+      /* if(RegisterisDisplayed.isDisplayed()&&RegisterisDisplayed.isEnabled()) {
            System.out.println("Register ist verified");
-       }
+       }*/
        logout.isDisplayed();
        logout.isEnabled();
         logout.click();

@@ -1,21 +1,12 @@
 package Testcase;
 
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-
+import HelfMethoden.TestNGListener;
 import Pages.LoginPage;
-
-import com.aventstack.extentreports.reporter.configuration.Theme;
-import org.testng.Assert;
-import org.testng.SkipException;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners (TestNGListener.class)
 public class LoginTest extends TestBase {
 
     LoginPage Login;

@@ -8,10 +8,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.List;/*
 
 public class GUITest extends JFrame implements ActionListener {
-
+/*
      OpenFile File;
      JLabel Titel;
      JButton EXIT;
@@ -121,4 +121,4 @@ public class GUITest extends JFrame implements ActionListener {
         UI.MainGUI1();
 
     }
-}
+}*/

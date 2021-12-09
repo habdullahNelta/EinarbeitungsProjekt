@@ -23,6 +23,7 @@ public class TestBase {
     //GUI Warnung;
     OpenFile Screenshot;
     FormatedDate Datum;
+
     /*
     GUI Warnung;
     public static WebDriver driver;
@@ -112,6 +113,7 @@ public class TestBase {
 
     @AfterSuite
     public void quitDriver() throws InterruptedException {
+
         Thread.sleep(2000);
         driver.quit();
         Thread.sleep(1000);

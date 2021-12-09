@@ -4,69 +4,69 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="11,870">
+           time="12,345">
     <properties></properties>
 
 
 
             <testcase
-                name="ShoppingCardClickTest"
-                time="0,516"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="VerifyPreisBook2"
-                time="0,386"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="EstimateShippingTest"
-                time="2,039"
+                name="ShippingMethodTest"
+                time="0,623"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
                 name="RegisterTest"
-                time="2,006"
+                time="2,077"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
                 name="BillingAddressTest"
-                time="0,591"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="AddBook1ToCartTest"
-                time="1,519"
+                time="0,590"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
                 name="UpdateCartTest"
-                time="1,126"
+                time="1,178"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
-                name="ShippingMethodTest"
-                time="0,606"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="ShippingAddressTest"
-                time="0,601"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="AddBook2ToCartTest"
-                time="1,084"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="LoginTest"
-                time="1,026"
+                name="AddBook1ToCartTest"
+                time="1,640"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
                 name="VerifyPreisBook1"
-                time="0,370"
+                time="0,377"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ShoppingCardClickTest"
+                time="0,569"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="EstimateShippingTest"
+                time="2,196"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="AddBook2ToCartTest"
+                time="1,089"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ShippingAddressTest"
+                time="0,609"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="VerifyPreisBook2"
+                time="0,360"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="LoginTest"
+                time="1,037"
                 classname="Testcase.TestPlan">
             </testcase>
 </testsuite>

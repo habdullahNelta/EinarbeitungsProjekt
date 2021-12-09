@@ -1,12 +1,15 @@
 package Testcase;
 
 
+import HelfMethoden.TestNGListener;
 import Pages.*;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 /**
  * @author Hasan Abdullah
  */
+@Listeners(TestNGListener.class)
 public class TestPlan extends TestBase {
      RegisterPage Register;
      LoginPage Login;
