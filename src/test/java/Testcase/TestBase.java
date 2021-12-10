@@ -115,7 +115,7 @@ public class TestBase {
     public void quitDriver() throws InterruptedException {
 
         Thread.sleep(2000);
-        driver.quit();
+     //   driver.quit();
         Thread.sleep(1000);
         Report = new OpenFile();
         Report.OpenTestReport();

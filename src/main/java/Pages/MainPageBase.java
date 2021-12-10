@@ -11,6 +11,4 @@ public class MainPageBase {
         PageFactory.initElements(driver, this);
 
     }
-
-
 }

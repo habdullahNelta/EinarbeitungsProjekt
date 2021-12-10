@@ -11,7 +11,7 @@ public class RegisterTest extends TestBase {
     RegisterPage Register;
 
 
-    @Test public void RegisterTest() {
+    @Test public void RegisterTest1() {
         Register = new RegisterPage(driver);
         Register.Register();
     }

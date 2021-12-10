@@ -67,6 +67,4 @@ public class RandomGenerator {
         // I tried another approaches here, still the same result
     }
 
-
-
 }

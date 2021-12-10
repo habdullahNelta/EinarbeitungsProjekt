@@ -18,21 +18,16 @@ public class TestPlan extends TestBase {
      CheckoutPage Checkout;
 
 
-
-
-
     @Test(priority = 1,groups = "Register")
     public void RegisterTest() {
         Register = new RegisterPage(driver);
         Register.Register();
     }
 
-
     @Test(priority = 2,groups = "Login")
     public void LoginTest() {
         Login = new LoginPage(driver);
         Login.login();
-
     }
 
     @Test(priority = 3,groups ="Artikelkaufen" )
@@ -71,7 +66,6 @@ public class TestPlan extends TestBase {
         Books.UpdateCartPage();
     }
 
-
     @Test(priority = 9,groups = "Checkout")
     public void EstimateShippingTest() throws InterruptedException {
         Checkout = new CheckoutPage(driver);
@@ -93,6 +87,28 @@ public class TestPlan extends TestBase {
         Checkout.ShippingMethodPage();
     }
 
+    @Test(priority = 13)
+    public void PaymentMethodTest() throws InterruptedException {
+        Checkout.PaymentMethodPage();
+    }
 
+    @Test (priority = 14,groups = "Checkout")
+    public void PaymentInformationTest() throws InterruptedException {
+        Checkout.PaymentInformationPage();
+    }
 
+    @Test (priority = 15,groups = "Checkout")
+    public void ConfirmOrderTest() throws InterruptedException {
+        Checkout.ConfirmOrderPage();
+    }
+
+    @Test (priority = 16,groups = "Checkout")
+    public void successOrderTest() throws InterruptedException {
+        Checkout.successOrderPage();
+    }
+
+    @Test (priority = 17,groups = "Checkout")
+    public void OrderEndTest() throws InterruptedException {
+        Checkout.OrderEndPage();
+    }
 }

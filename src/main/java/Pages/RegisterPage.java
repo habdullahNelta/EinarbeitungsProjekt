@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 public class RegisterPage extends MainPageBase {
 
     public static String EmailRegister;
-    public static String PasswordRegister=RandomGenerator.RandomNumber(6);
+    public static String PasswordRegister = RandomGenerator.RandomNumber(6);
     String Firstname1 = LoadData.userData.getProperty("Firstname");
     String Lastname1 = LoadData.userData.getProperty("Lastname");
     String Email1 = LoadData.userData.getProperty("Email");
@@ -19,40 +19,40 @@ public class RegisterPage extends MainPageBase {
         super(driver);
     }
 
-    @FindBy(className="ico-register")
-    WebElement RegisterMenu ;
+    @FindBy(className = "ico-register")
+    WebElement RegisterMenu;
 
-    @FindBy(id="gender-male")
+    @FindBy(id = "gender-male")
     WebElement MaleButton;
 
-    @FindBy(id="gender-female")
+    @FindBy(id = "gender-female")
     WebElement FemaleButton;
 
-    @FindBy(id="FirstName")
+    @FindBy(id = "FirstName")
     WebElement FirstName;
 
-    @FindBy(id="LastName")
+    @FindBy(id = "LastName")
     WebElement LastName;
 
-    @FindBy(id="Email")
+    @FindBy(id = "Email")
     WebElement Email;
 
-    @FindBy(id="Password")
+    @FindBy(id = "Password")
     WebElement Password;
 
-    @FindBy(id="ConfirmPassword")
+    @FindBy(id = "ConfirmPassword")
     WebElement ConfirmPassword;
 
-    @FindBy(id="register-button")
+    @FindBy(id = "register-button")
     WebElement Registerbutton;
 
-    @FindBy(className="result")
+    @FindBy(className = "result")
     WebElement RegisterisDisplayed;
 
-    @FindBy(className="ico-logout")
-    WebElement logout ;
+    @FindBy(className = "ico-logout")
+    WebElement logout;
 
-    public void Register()  {
+    public void Register() {
         RegisterMenu.isDisplayed();
         RegisterMenu.isEnabled();
         RegisterMenu.click();
@@ -67,15 +67,17 @@ public class RegisterPage extends MainPageBase {
             FemaleButton.isEnabled();
             FemaleButton.click();
         }
-        if(Firstname1.equals("")  || Lastname1.equals("")){
+        if (Firstname1.equals("") || Lastname1.equals("")) {
 
             FirstName.sendKeys(RandomGenerator.RandomString(5));
             LastName.sendKeys(RandomGenerator.RandomString(5));
-            Email.sendKeys(RandomGenerator.RandomString(5)+
-                    "@"+RandomGenerator.RandomString(4)+".de");
+            Email.sendKeys(RandomGenerator.RandomString(5) +
+                    "@" + RandomGenerator.RandomString(4) + ".de");
             Password.sendKeys(PasswordRegister);
             ConfirmPassword.sendKeys(PasswordRegister);
-        }else {
+            System.out.println("Hinweis: es werden zufälligen Werte für Email und Password eingegebn," +
+                  "\n"+  " denn Firstname odre Lastname ist nicht TestDate eingegeben");
+        } else {
             FirstName.sendKeys(Firstname1);
             LastName.sendKeys(Lastname1);
             Email.sendKeys(Email1);
@@ -86,11 +88,9 @@ public class RegisterPage extends MainPageBase {
         Registerbutton.click();
         RegisterisDisplayed.isDisplayed();
         RegisterisDisplayed.isEnabled();
-      /* if(RegisterisDisplayed.isDisplayed()&&RegisterisDisplayed.isEnabled()) {
-           System.out.println("Register ist verified");
-       }*/
-       logout.isDisplayed();
-       logout.isEnabled();
+
+        logout.isDisplayed();
+        logout.isEnabled();
         logout.click();
     }
 }

@@ -18,13 +18,13 @@ public class VerifyPreisPage extends MainPageBase {
     * book2| 10  | 11  |12    |13
     * */
     //book1
-    @FindBy(className = "product-unit-price")//-----------
+    @FindBy(className = "product-unit-price")
     WebElement OneBook1Price;
 
     @FindBy(xpath = "/html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/form/table/tbody/tr/td[5]/input")
     WebElement QtyBook1Price;
 
-    @FindBy(className = "product-subtotal")//----------
+    @FindBy(className = "product-subtotal")
     WebElement TotalBook1Price;
 
     @FindBy(xpath = "/html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/form/table/tbody/tr[2]/td[4]/span[2]")
@@ -98,8 +98,8 @@ public class VerifyPreisPage extends MainPageBase {
         } catch (Exception e) {
             System.out.println("Total Price Book2 entweder nicht existiert oder nicht Enabled");
         }*/
-        System.out.println("One Book2 Price: " + Float.parseFloat(OneBook2Price.getText()) + ", " +
-                " Qty Book2 Price: " + Float.valueOf(QtyBook2Price.getAttribute("value")) + ", " +
+        System.out.println("One Book2 Price: " + OneBook2Price.getText() + ", " +
+                " Qty Book2 Price: " + QtyBook2Price.getAttribute("value") + ", " +
                 "  Total Book2 Price:  " + TotalBook2Price.getText());
     }
 }

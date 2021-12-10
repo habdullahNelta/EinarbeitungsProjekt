@@ -25,7 +25,7 @@ public class LoginPage extends MainPageBase {
     @FindBy(id = "Email")
     WebElement EmailLogin;
 
-    @FindBy(id = "Password")///----------------
+    @FindBy(id = "Password")
     WebElement PassWordLogin;
 
     @FindBy(className = "login-button")
@@ -37,14 +37,14 @@ public class LoginPage extends MainPageBase {
     public void login() {
         login.isDisplayed();
         login.isEnabled();
-      /*  try{
-        }catch (Exception e){
-            System.out.println("login button menu nicht Enabled");
-        }*/
         login.click();
 
+        EmailLogin.isDisplayed();
         EmailLogin.sendKeys(Email);
+
+        PassWordLogin.isDisplayed();
         PassWordLogin.sendKeys(Password);
+
         loginButton.isDisplayed();
         loginButton.isEnabled();
         loginButton.click();
@@ -52,9 +52,5 @@ public class LoginPage extends MainPageBase {
         loginisDisplayed.isDisplayed();
         loginisDisplayed.isEnabled();
 
-
-       /* if (loginisDisplayed.isDisplayed() && loginisDisplayed.isEnabled()) {
-            System.out.println("login ist verified");
-        }*/
     }
 }

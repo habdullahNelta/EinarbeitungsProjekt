@@ -2,12 +2,14 @@ package Pages;
 
 import HelfMethoden.LoadData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.FindBy;
 
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -22,10 +24,6 @@ public class CheckoutPage extends MainPageBase {
         super(driver);
 
     }
-
-    //Select CountryMenu = new Select(driver.findElement(By.id("CountryId")));
-    //@FindBy(id = "CountryId")
-    //Select CountryMenu;
 
 
     @FindBy(id = "ZipPostalCode")
@@ -72,11 +70,11 @@ public class CheckoutPage extends MainPageBase {
         Thread.sleep(500);
         Select CountryMenu = new Select(driver.findElement(By.id("CountryId")));
         CountryMenu.selectByVisibleText(Country);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 
         Select StateProvince1 = new Select(driver.findElement(By.id("StateProvinceId")));
         Thread.sleep(500);
-        System.out.println(StateProvince1.getFirstSelectedOption());
+       // System.out.println(StateProvince1.getFirstSelectedOption());
         StateProvince1.selectByVisibleText(StateProvince);
        // Thread.sleep(500);
         ZipPostalCode1.clear();
@@ -86,7 +84,6 @@ public class CheckoutPage extends MainPageBase {
        // Thread.sleep(500);
         CheckoutButton.click();
 
-        System.out.println("Estimate Shipping ist verified");
     }
 
     public void BillingAddressPage() throws InterruptedException {
@@ -139,9 +136,12 @@ public class CheckoutPage extends MainPageBase {
     }
 
     public void successOrderPage () throws InterruptedException {
-        Thread.sleep(500);
+
+        Thread.sleep(1000);
         successOrderText.isDisplayed();
-        System.out.println(successOrderText.getText());
+        Assert.assertEquals(successOrderText.getText(),
+                "Your order has been successfully processed!");
+       // System.out.println(successOrderText.getText());
 
     }
     public void OrderEndPage () throws InterruptedException {

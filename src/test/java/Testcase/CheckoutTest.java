@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class CheckoutTest extends TestBase {
     ArtikelKaufen Books;
     LoginPage Login;
-     CheckoutPage Checkout;
+    CheckoutPage Checkout;
     VerifyPreisPage Preise;
 
 
@@ -50,7 +50,6 @@ public class CheckoutTest extends TestBase {
     }
 
 
-
     @Test(priority = 3)
     public void ShoppingCardClickTest() throws InterruptedException {
         Preise = new VerifyPreisPage(driver);
@@ -59,6 +58,7 @@ public class CheckoutTest extends TestBase {
         //  Preise.VerifyTolalPreisBook2(10);
 
     }
+
     @Test(priority = 4)
     public void VerifyPreisBook1() throws InterruptedException {
         Thread.sleep(200);
@@ -71,6 +71,7 @@ public class CheckoutTest extends TestBase {
         Preise.VerifyTolalPreisBook2(24);
 
     }
+
     @Test(priority = 6)
     public void UpdateCartTest() throws InterruptedException {
         Thread.sleep(1000);
@@ -83,41 +84,42 @@ public class CheckoutTest extends TestBase {
         Checkout.EstimateShippingPage(driver);
     }
 
-    @Test (priority = 8)
+    @Test(priority = 8)
     public void BillingAddressTest() throws InterruptedException {
         Checkout.BillingAddressPage();
     }
 
-    @Test (priority = 9)
+    @Test(priority = 9)
     public void ShippingAddressTest() throws InterruptedException {
         Checkout.ShippingAddressPage();
     }
 
-    @Test (priority = 10)
+    @Test(priority = 10)
     public void ShippingMethodTest() throws InterruptedException {
         Checkout.ShippingMethodPage();
     }
 
-    @Test (priority = 11)
+    @Test(priority = 11)
     public void PaymentMethodTest() throws InterruptedException {
         Checkout.PaymentMethodPage();
     }
 
-    @Test (priority = 12)
+    @Test(priority = 12)
     public void PaymentInformationTest() throws InterruptedException {
         Checkout.PaymentInformationPage();
     }
-    @Test (priority = 13)
+
+    @Test(priority = 13)
     public void ConfirmOrderTest() throws InterruptedException {
         Checkout.ConfirmOrderPage();
     }
 
-    @Test (priority = 14)
+    @Test(priority = 14)
     public void successOrderTest() throws InterruptedException {
         Checkout.successOrderPage();
     }
 
-    @Test (priority = 15)
+    @Test(priority = 15)
     public void OrderEndTest() throws InterruptedException {
         Checkout.OrderEndPage();
     }

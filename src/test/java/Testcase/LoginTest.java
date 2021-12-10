@@ -12,13 +12,10 @@ public class LoginTest extends TestBase {
     LoginPage Login;
 
 
-
     @Test(testName = "Login")
-    public void LoginTest() {
+    public void LoginTest1() {
         Login = new LoginPage(driver);
         Login.login();
-
-
     }
 
 /*
