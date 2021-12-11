@@ -1,5 +1,6 @@
 package Testcase;
 
+import HelfMethoden.ExceptionInput;
 import HelfMethoden.TestNGListener;
 import Pages.RegisterPage;
 import org.testng.annotations.Listeners;
@@ -11,7 +12,7 @@ public class RegisterTest extends TestBase {
     RegisterPage Register;
 
 
-    @Test public void RegisterTest1() {
+    @Test public void RegisterTest1() throws ExceptionInput {
         Register = new RegisterPage(driver);
         Register.Register();
     }

@@ -1,6 +1,8 @@
 package Testcase;
 
 
+import HelfMethoden.ExceptionExistence;
+import HelfMethoden.ExceptionInput;
 import HelfMethoden.TestNGListener;
 import Pages.*;
 import org.testng.annotations.Listeners;
@@ -13,26 +15,26 @@ import org.testng.annotations.Test;
 public class TestPlan extends TestBase {
      RegisterPage Register;
      LoginPage Login;
-     ArtikelKaufen Books;
+     ArtikelKaufenPage Books;
      VerifyPreisPage Preise;
      CheckoutPage Checkout;
 
 
     @Test(priority = 1,groups = "Register")
-    public void RegisterTest() {
+    public void RegisterTest() throws ExceptionInput {
         Register = new RegisterPage(driver);
         Register.Register();
     }
 
     @Test(priority = 2,groups = "Login")
-    public void LoginTest() {
+    public void LoginTest() throws ExceptionInput, InterruptedException {
         Login = new LoginPage(driver);
         Login.login();
     }
 
     @Test(priority = 3,groups ="Artikelkaufen" )
     public void AddBook1ToCartTest() throws InterruptedException {
-        Books = new ArtikelKaufen(driver);
+        Books = new ArtikelKaufenPage(driver);
         Books.AddBooksToCartPage();
        // Thread.sleep(1000);
     }
@@ -62,12 +64,12 @@ public class TestPlan extends TestBase {
 
     }
     @Test(priority = 8,groups = "Artikelkaufen")
-    public void UpdateCartTest() throws InterruptedException {
+    public void UpdateCartTest() throws InterruptedException, ExceptionExistence {
         Books.UpdateCartPage();
     }
 
     @Test(priority = 9,groups = "Checkout")
-    public void EstimateShippingTest() throws InterruptedException {
+    public void EstimateShippingTest() throws InterruptedException, ExceptionInput {
         Checkout = new CheckoutPage(driver);
         Checkout.EstimateShippingPage(driver);
     }
@@ -87,7 +89,7 @@ public class TestPlan extends TestBase {
         Checkout.ShippingMethodPage();
     }
 
-    @Test(priority = 13)
+    @Test(priority = 13,groups = "Checkout")
     public void PaymentMethodTest() throws InterruptedException {
         Checkout.PaymentMethodPage();
     }

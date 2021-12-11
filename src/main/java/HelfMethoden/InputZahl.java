@@ -2,6 +2,7 @@ package HelfMethoden;
 
 import java.util.Scanner;
 
+//Klasse für input integer Zahl
 public class InputZahl {
     int ZwVar;
 

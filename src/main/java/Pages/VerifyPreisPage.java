@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class VerifyPreisPage extends MainPageBase {
+public class VerifyPreisPage extends MainPage {
     public VerifyPreisPage(WebDriver driver) {
         super(driver);
     }
@@ -79,13 +79,16 @@ public class VerifyPreisPage extends MainPageBase {
       //  Thread.sleep(500);
     }
 
+    //was ist lieber wie hier oder wie in VerifyTolalPreisBook1
     public void VerifyTolalPreisBook2(float GegebnePriesBook2)  {
         //Thread.sleep(1000);
         TotalBook2Price.isDisplayed();
         QtyBook2Price.isDisplayed();
         OneBook2Price.isDisplayed();
 
-        Assert.assertEquals(Float.parseFloat(OneBook2Price.getText()),GegebnePriesBook2);
+        Assert.assertEquals(Float.parseFloat(OneBook2Price.getText()),GegebnePriesBook2,
+                "OneBook2Price ist nicht wie gewünscht");
+
         /*
         try {
 

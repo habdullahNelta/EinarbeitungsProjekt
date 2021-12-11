@@ -1,14 +1,15 @@
 package Pages;
 
 
+import HelfMethoden.ExceptionExistence;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 
-public class ArtikelKaufen extends MainPageBase {
-    public ArtikelKaufen(WebDriver driver) {
+public class ArtikelKaufenPage extends MainPage {
+    public ArtikelKaufenPage(WebDriver driver) {
         super(driver);
     }
 
@@ -36,7 +37,7 @@ public class ArtikelKaufen extends MainPageBase {
 
     public void AddBooksToCartPage() throws InterruptedException {
         openBooksMenu.isDisplayed();
-          openBooksMenu.isEnabled();
+        openBooksMenu.isEnabled();
         openBooksMenu.click();
 
         AddBook1ToCart.isDisplayed();
@@ -47,11 +48,7 @@ public class ArtikelKaufen extends MainPageBase {
         AddBookToCartisDisplayed.isDisplayed();
         Assert.assertEquals(AddBookToCartisDisplayed.getText(),
                 "The product has been added to your shopping cart");
-        /*
-        if (AddBookToCartisDisplayed.isDisplayed()) {
-            System.out.println("Add Book1 To Cart ist verified");
 
-        }*/
     }
 
     public void AddBooks2ToCartPage() throws InterruptedException {
@@ -62,33 +59,25 @@ public class ArtikelKaufen extends MainPageBase {
         AddBookToCartisDisplayed.isDisplayed();
         Assert.assertEquals(AddBookToCartisDisplayed.getText(),
                 "The product has been added to your shopping cart");
-
-        /*if (AddBookToCartisDisplayed.isDisplayed()) {
-            System.out.println("Add Book2 To Cart ist verified  "+ AddBookToCartisDisplayed.getText());
-        }*/
     }
 
-    public void UpdateCartPage() throws InterruptedException {
+    public void UpdateCartPage() throws InterruptedException, ExceptionExistence {
 
-        //  ShoppingCard.click();
         Thread.sleep(200);
         Book1Doppelt.clear();
         Book1Doppelt.sendKeys("2");
         Thread.sleep(200);
-        Book3Delete.isDisplayed();
         if (Book3Delete.isEnabled() && Book3Delete.isDisplayed()) {
             Book3Delete.click();
-        }else {
-            System.out.println("Book Delete button entweder nicht Displayed oder nicht Enabled");
+        } else {
+            throw new ExceptionExistence("Book Delete button");
         }
-        if (UpdateCartClick.isDisplayed()&&UpdateCartClick.isEnabled()){
+        if (UpdateCartClick.isDisplayed() && UpdateCartClick.isEnabled()) {
             UpdateCartClick.click();
-        }else {
-            System.out.println("UpdateCart button entweder nicht Displayed oder nicht Enabled");
+        } else {
+            throw new ExceptionExistence("UpdateCart button");
         }
-
         // Thread.sleep(1000);
 
     }
-
 }

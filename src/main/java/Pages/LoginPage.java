@@ -1,5 +1,6 @@
 package Pages;
 
+import HelfMethoden.ExceptionInput;
 import HelfMethoden.LoadData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 
 ///für Login schreibt mann alle mögliche bottun oder felder oder .....
 //mithilfe von xpath oder id oder class......
-public class LoginPage extends MainPageBase {
+public class LoginPage extends MainPage {
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -18,7 +19,7 @@ public class LoginPage extends MainPageBase {
     String Email = LoadData.userData.getProperty("Email");
     String Password = LoadData.userData.getProperty("Password");
     //Login Click
-    @FindBy(className = "ico-login")
+    @FindBy(className = "ico-login")////////////////////////////////
     WebElement login;
 
     //Email-Login Eingabe
@@ -34,16 +35,24 @@ public class LoginPage extends MainPageBase {
     @FindBy(xpath = " /html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a")
     WebElement loginisDisplayed;
 
-    public void login() {
+    public void login() throws ExceptionInput, InterruptedException {
+
         login.isDisplayed();
         login.isEnabled();
         login.click();
 
         EmailLogin.isDisplayed();
+        if(Email.isEmpty()){
+            throw new ExceptionInput("Email");
+        }
         EmailLogin.sendKeys(Email);
-
         PassWordLogin.isDisplayed();
+
+        if(Password.isEmpty()){
+            throw new ExceptionInput("Password");
+        }
         PassWordLogin.sendKeys(Password);
+        Thread.sleep(1000);
 
         loginButton.isDisplayed();
         loginButton.isEnabled();
@@ -51,6 +60,5 @@ public class LoginPage extends MainPageBase {
 
         loginisDisplayed.isDisplayed();
         loginisDisplayed.isEnabled();
-
     }
 }

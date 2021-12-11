@@ -1,8 +1,8 @@
 package Pages;
 
+import HelfMethoden.ExceptionInput;
 import HelfMethoden.LoadData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -11,10 +11,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.time.Duration;
 
-
-public class CheckoutPage extends MainPageBase {
+public class CheckoutPage extends MainPage {
 
     private final String Country = LoadData.userData.getProperty("Country");
     private final String StateProvince = LoadData.userData.getProperty("StateProvince");
@@ -63,25 +61,39 @@ public class CheckoutPage extends MainPageBase {
     WebElement OrderEnd;
 
 
-    public void EstimateShippingPage(WebDriver driver) throws InterruptedException {
-        CheckoutButton.isDisplayed();
-        CheckoutButton.isEnabled();
+    public void EstimateShippingPage(WebDriver driver) throws InterruptedException, ExceptionInput {
+
 
         Thread.sleep(500);
         Select CountryMenu = new Select(driver.findElement(By.id("CountryId")));
-        CountryMenu.selectByVisibleText(Country);
-       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+        if (Country.isEmpty()) {
+            throw new ExceptionInput("Country");
+        } else {
+            CountryMenu.selectByVisibleText(Country);
+        }
 
         Select StateProvince1 = new Select(driver.findElement(By.id("StateProvinceId")));
         Thread.sleep(500);
-       // System.out.println(StateProvince1.getFirstSelectedOption());
-        StateProvince1.selectByVisibleText(StateProvince);
-       // Thread.sleep(500);
+        // System.out.println(StateProvince1.getFirstSelectedOption());
+        if (StateProvince.isEmpty()) {
+            throw new ExceptionInput("StateProvince");
+        } else {
+            StateProvince1.selectByVisibleText(StateProvince);
+        }
+
+        // Thread.sleep(500);
         ZipPostalCode1.clear();
-        ZipPostalCode1.sendKeys(ZipPostalCode);
+        if (ZipPostalCode.isEmpty()) {
+            throw new ExceptionInput("ZipPostalCode");
+        } else {
+            ZipPostalCode1.sendKeys(ZipPostalCode);
+        }
         //Thread.sleep(500);
+
         Agree.click();
-       // Thread.sleep(500);
+        // Thread.sleep(500);
+        CheckoutButton.isDisplayed();
+        CheckoutButton.isEnabled();
         CheckoutButton.click();
 
     }
@@ -93,11 +105,12 @@ public class CheckoutPage extends MainPageBase {
         BillingAddressButton.click();
 
     }
+
     public void ShippingAddressPage() throws InterruptedException {
         Thread.sleep(500);
         ShippingAddressButton.isDisplayed();
         ShippingAddressButton.isEnabled();
-       ShippingAddressButton.click();
+        ShippingAddressButton.click();
 
     }
 
@@ -108,6 +121,7 @@ public class CheckoutPage extends MainPageBase {
         ShippingMethodButton.click();
 
     }
+
     public void PaymentMethodPage() throws InterruptedException {
         Thread.sleep(500);
         PaymentMethodButton.isDisplayed();
@@ -135,20 +149,18 @@ public class CheckoutPage extends MainPageBase {
 
     }
 
-    public void successOrderPage () throws InterruptedException {
+    public void successOrderPage() throws InterruptedException {
 
         Thread.sleep(1000);
         successOrderText.isDisplayed();
         Assert.assertEquals(successOrderText.getText(),
                 "Your order has been successfully processed!");
-       // System.out.println(successOrderText.getText());
-
     }
-    public void OrderEndPage () throws InterruptedException {
+
+    public void OrderEndPage() throws InterruptedException {
         Thread.sleep(500);
         OrderEnd.isDisplayed();
         OrderEnd.click();
-
 
     }
 }

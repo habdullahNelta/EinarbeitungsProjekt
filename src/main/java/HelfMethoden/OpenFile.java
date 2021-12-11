@@ -3,9 +3,11 @@ package HelfMethoden;
 import java.awt.*;
 import java.io.File;
 
+//klasse für öffnen eines Ordner bzw. Datei
 public class OpenFile {
     String FileLoction = System.getProperty("user.dir");
 
+    // öffnen html Test Report
     public void OpenTestReport() {
 
         try {
@@ -24,6 +26,7 @@ public class OpenFile {
         }
     }
 
+    // öffnen der Test StartWerte, die in "TestData.properties" geschrieben sind.
     public void OpenTestDate() {
 
         try {
@@ -42,6 +45,7 @@ public class OpenFile {
         }
     }
 
+    // öffnung des Orders Screenshot
     public void OpenScreenshot() {
 
         try {

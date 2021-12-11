@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+//für laden der Daten bzw. Werte von "TestData.properties"
 public class LoadData {
+    //speicherort von "TestData.properties"
     public static Properties userData = loadProperties(System.getProperty("user.dir")+
             "\\src\\main\\java\\HelfMethoden\\TestData.properties");
 
@@ -19,7 +21,6 @@ public class LoadData {
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (IOException e) {
-
             System.out.println(e.getMessage());
         }
         return pro ;

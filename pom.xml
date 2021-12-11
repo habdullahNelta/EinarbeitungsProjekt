@@ -23,12 +23,12 @@
     </dependency>
     <!--for test NG-->
     <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-    <dependency>
+   <!-- <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
         <version>7.4.0</version>
         <scope>test</scope>
-    </dependency>
+    </dependency>-->
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-chrome-driver</artifactId>
@@ -75,6 +75,7 @@
         <artifactId>junit-jupiter-api</artifactId>
         <version>5.8.2</version>
         <scope>test</scope>
+
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
   <!---  <dependency>
@@ -115,11 +116,11 @@
         <version>5.6.1</version>
     </dependency>
 
-    <dependency>
+    <!--<dependency>
         <groupId>io.github.bonigarcia</groupId>
         <artifactId>webdrivermanager</artifactId>
         <version>4.3.1</version>
-    </dependency>
+    </dependency>-->
     <dependency>
         <groupId>org.junit.vintage</groupId>
         <artifactId>junit-vintage-engine</artifactId>
@@ -130,6 +131,16 @@
         <artifactId>testng</artifactId>
         <version>7.4.0</version>
         <scope>compile</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.5</version>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.6.4</version>
     </dependency>
 </dependencies>
 
@@ -150,7 +161,7 @@
         </plugin>
     </plugins>
 </build>
-
+<!--
 <reporting>
     <plugins>
         <plugin>
@@ -168,5 +179,5 @@
             </configuration>
         </plugin>
     </plugins>
-</reporting>
+</reporting>-->
 </project>

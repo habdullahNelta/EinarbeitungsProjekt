@@ -1,7 +1,9 @@
 package HelfMethoden;
+//in dieser Klasse werden zufällige Werte z.b Email in Register generiert
 
+
+// function to generate a random string of length n (without number)
 public class RandomGenerator {
-    // function to generate a random string of length n
     static public String RandomString(int length) {
         // chose a Character random from this String
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -22,7 +24,7 @@ public class RandomGenerator {
         return sb.toString();
     }
 
-    // function to generate a random string of length n
+    // function to generate a random string of length n (with number)
     static public String RandomStringNumber(int length) {
         // chose a Character random from this String
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -43,7 +45,7 @@ public class RandomGenerator {
         return sb.toString();
     }
 
-    // function to generate a random string of length n
+    // function to generate a random number of length n
     static public String RandomNumber(int length) {
         // chose a Character random from this String
         String AlphaNumericString = "0123456789";
@@ -62,6 +64,7 @@ public class RandomGenerator {
         return sb.toString();
     }
 
+    // function to generate a random Boolean
     public static boolean RandomBoolean() {
         return Math.random() < 0.5;
         // I tried another approaches here, still the same result

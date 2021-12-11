@@ -1,18 +1,17 @@
 package Testcase;
 
 
+import HelfMethoden.ExceptionExistence;
 import HelfMethoden.TestNGListener;
-import Pages.ArtikelKaufen;
-import Pages.LoginPage;
+import Pages.ArtikelKaufenPage;
 import Pages.VerifyPreisPage;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(TestNGListener.class)
 public class ArtikelKaufenTest extends TestBase {
 
-    ArtikelKaufen Books;
+    ArtikelKaufenPage Books;
   //LoginPage Login;
     VerifyPreisPage Preise;
 
@@ -25,7 +24,7 @@ public class ArtikelKaufenTest extends TestBase {
 
     @Test(priority = 1)
     public void AddBook1ToCartTest() throws InterruptedException {
-        Books = new ArtikelKaufen(driver);
+        Books = new ArtikelKaufenPage(driver);
         Books.AddBooksToCartPage();
         Thread.sleep(1000);
     }
@@ -57,7 +56,7 @@ public class ArtikelKaufenTest extends TestBase {
     }
 
     @Test(priority = 6)
-    public void UpdateCartTest() throws InterruptedException {
+    public void UpdateCartTest() throws InterruptedException, ExceptionExistence {
         Thread.sleep(2000);
         Books.UpdateCartPage();
     }

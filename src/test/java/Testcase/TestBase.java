@@ -15,6 +15,7 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+
 import java.io.File;
 
 
@@ -53,7 +54,7 @@ public class TestBase {
 
     @BeforeSuite
     @Parameters({"browser"})
-    public void startDriver(@Optional("chrome") String browser) {
+    public void StartDriver(@Optional("chrome") String browser) {
         Screenshot = new OpenFile();
         if (browser.equalsIgnoreCase("chrome")) {
             String chromePath = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
@@ -85,12 +86,12 @@ public class TestBase {
 
         }
         driver.navigate().to(WebAppPath);
-        driver.manage().window().maximize();
-       // driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+       // driver.manage().window().maximize();
+        // driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
 
     @AfterMethod
-    public void tearDown(ITestResult result)  {
+    public void TearDown(ITestResult result) {
 
         // Here will compare if test is failing then only it will enter into if condition
         if (ITestResult.FAILURE == result.getStatus()) {
@@ -112,12 +113,12 @@ public class TestBase {
     }
 
     @AfterSuite
-    public void quitDriver() throws InterruptedException {
+    public void QuitDriver() throws InterruptedException {
 
         Thread.sleep(2000);
-     //   driver.quit();
+        driver.quit();
         Thread.sleep(1000);
-        Report = new OpenFile();
-        Report.OpenTestReport();
+        //Report = new OpenFile();
+       // Report.OpenTestReport();
     }
 }
