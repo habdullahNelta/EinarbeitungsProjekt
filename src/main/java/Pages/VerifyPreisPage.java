@@ -1,10 +1,13 @@
 package Pages;
 
+import HelfMethoden.ExceptionInput;
 import HelfMethoden.LoadData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+
+import static HelfMethoden.ElementTest.ObjectIsEmpty;
 
 public class VerifyPreisPage extends MainPage {
     public VerifyPreisPage(WebDriver driver) {
@@ -46,7 +49,9 @@ public class VerifyPreisPage extends MainPage {
         ShoppingCard.click();
     }
 
-    public void VerifyTolalPreisBook1() {
+    public void VerifyTolalPreisBook1() throws ExceptionInput {
+        ObjectIsEmpty(LoadData.userData.getProperty("PriceBook1"),"PriceBook1");
+
         Price[0][0]=Float.parseFloat(OneBook1Price.getText());
         Price[0][1]=Float.parseFloat(QtyBook1Price.getAttribute("value"));
         Price[0][2]=Float.parseFloat(TotalBook1Price.getText());
@@ -56,7 +61,8 @@ public class VerifyPreisPage extends MainPage {
         QtyBook1Price.isDisplayed();
         OneBook1Price.isDisplayed();
 
-        Assert.assertEquals(Float.parseFloat(OneBook1Price.getText()),Price[0][3]);
+        Assert.assertEquals(Float.parseFloat(OneBook1Price.getText()),Price[0][3]
+                ,"Preis Book1 ist nicht wie erwartet");
        /* try {
             TotalBook1Price.isDisplayed();
             QtyBook1Price.isDisplayed();
@@ -86,8 +92,8 @@ public class VerifyPreisPage extends MainPage {
         QtyBook2Price.isDisplayed();
         OneBook2Price.isDisplayed();
 
-        Assert.assertEquals(Float.parseFloat(OneBook2Price.getText()),GegebnePriesBook2,
-                "OneBook2Price ist nicht wie gewünscht");
+        Assert.assertEquals(Float.parseFloat(OneBook2Price.getText()),GegebnePriesBook2
+                ,"Preis Book2 ist nicht wie erwartet");
 
         /*
         try {

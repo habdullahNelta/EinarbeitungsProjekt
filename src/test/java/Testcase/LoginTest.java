@@ -1,6 +1,7 @@
 package Testcase;
 
 
+import HelfMethoden.ExceptionExistence;
 import HelfMethoden.ExceptionInput;
 import HelfMethoden.TestNGListener;
 import Pages.LoginPage;
@@ -14,7 +15,7 @@ public class LoginTest extends TestBase {
 
 
     @Test(testName = "Login")
-    public void LoginTest1() throws ExceptionInput, InterruptedException {
+    public void LoginTest1() throws ExceptionInput, InterruptedException, ExceptionExistence {
         Login = new LoginPage(driver);
         Login.login();
     }

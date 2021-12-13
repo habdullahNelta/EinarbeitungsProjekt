@@ -1,17 +1,19 @@
 package Testcase;
 
-
+/*
 import HelfMethoden.OpenFile;
 import org.testng.TestNG;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.List;/*
+import java.util.List;
+
 
 public class GUITest extends JFrame implements ActionListener {
-/*
+
      OpenFile File;
      JLabel Titel;
      JButton EXIT;
@@ -21,7 +23,8 @@ public class GUITest extends JFrame implements ActionListener {
      JButton ScreenshotOpen;
      String[] TestCases = {"RegisterTest", "LoginTest", "ArtikelKaufenTest","CheckoutTest", "GesamteTest" };
      JComboBox<String> CompoBoxOfTestCases;
-
+    JTextArea tfName = new JTextArea();
+//https://www.youtube.com/watch?v=cXtm9aMmyhU&ab_channel=HarshGGupta
     public void MainGUI1() {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,35 +44,39 @@ public class GUITest extends JFrame implements ActionListener {
 
         CompoBoxOfTestCases = new JComboBox<String>(TestCases);
         CompoBoxOfTestCases.addActionListener(this);
-
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
         // Layout-Style defined: 2 columns, 10p distance
-        setLayout(new GridLayout(4, 2, 5, 5));
-        setMinimumSize(new Dimension(400, 150));
+        setLayout(new GridLayout(5, 2, 5, 5));
+       // setMinimumSize(new Dimension(400, 150));
 
 
         add(Titel);
-        add(CompoBoxOfTestCases);
-        add(DatenOpen);
+         add(CompoBoxOfTestCases);
+       //
+         add(DatenOpen);
         add(ReportOpen);
         add(ScreenshotOpen);
         add(new JLabel(""));
         add(Eingabe);
         add(EXIT);
-
+        add(tfName);
+      //  add(tfName);
         setTitle("Register Test");
-        setResizable(false);
-        //pack(); // organise all the elements
+       // setResizable(false);
+        pack(); // organise all the elements
         setVisible(true);
 
     }
 
     public void actionPerformed(ActionEvent e) {
+
         TestNG Obj = new TestNG();
         File = new OpenFile();
         String TestLoction = System.getProperty("user.dir");
         List<String> suites = new ArrayList<String>();
         String IndexTest = (String) CompoBoxOfTestCases.getSelectedItem();
-
+        tfName.setText("jjjjjjjjjjj");
         if (e.getSource() == Eingabe) {
 
             switch (IndexTest) {
@@ -111,6 +118,7 @@ public class GUITest extends JFrame implements ActionListener {
         if (e.getSource() == EXIT) {
             System.exit(0);
         }
+
     }
 
     //https://www.youtube.com/watch?v=hS-O2tWm_jM&ab_channel=RajTech-Trainer
@@ -121,4 +129,5 @@ public class GUITest extends JFrame implements ActionListener {
         UI.MainGUI1();
 
     }
+
 }*/

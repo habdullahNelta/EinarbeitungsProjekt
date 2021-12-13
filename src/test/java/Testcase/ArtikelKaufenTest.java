@@ -2,6 +2,7 @@ package Testcase;
 
 
 import HelfMethoden.ExceptionExistence;
+import HelfMethoden.ExceptionInput;
 import HelfMethoden.TestNGListener;
 import Pages.ArtikelKaufenPage;
 import Pages.VerifyPreisPage;
@@ -23,7 +24,7 @@ public class ArtikelKaufenTest extends TestBase {
     }*/
 
     @Test(priority = 1)
-    public void AddBook1ToCartTest() throws InterruptedException {
+    public void AddBook1ToCartTest() throws InterruptedException, ExceptionExistence {
         Books = new ArtikelKaufenPage(driver);
         Books.AddBooksToCartPage();
         Thread.sleep(1000);
@@ -44,13 +45,14 @@ public class ArtikelKaufenTest extends TestBase {
     }
 
     @Test(priority = 4)
-    public void VerifyPreisBook1() throws InterruptedException {
+    public void PreisBook1() throws InterruptedException, ExceptionInput {
         Thread.sleep(200);
         Preise.VerifyTolalPreisBook1();
     }
 
+
     @Test(priority = 5)
-    public void VerifyPreisBook2() throws InterruptedException {
+    public void PreisBook2() throws InterruptedException {
         Thread.sleep(200);
         Preise.VerifyTolalPreisBook2(24);
     }

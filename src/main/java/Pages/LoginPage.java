@@ -1,11 +1,14 @@
 package Pages;
 
+import HelfMethoden.ExceptionExistence;
 import HelfMethoden.ExceptionInput;
 import HelfMethoden.LoadData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static HelfMethoden.ElementTest.ElementTestClick;
+import static HelfMethoden.ElementTest.ObjectIsEmpty;
 
 
 ///für Login schreibt mann alle mögliche bottun oder felder oder .....
@@ -18,6 +21,7 @@ public class LoginPage extends MainPage {
 
     String Email = LoadData.userData.getProperty("Email");
     String Password = LoadData.userData.getProperty("Password");
+
     //Login Click
     @FindBy(className = "ico-login")////////////////////////////////
     WebElement login;
@@ -35,30 +39,25 @@ public class LoginPage extends MainPage {
     @FindBy(xpath = " /html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a")
     WebElement loginisDisplayed;
 
-    public void login() throws ExceptionInput, InterruptedException {
+    public void login() throws ExceptionInput, InterruptedException, ExceptionExistence {
+     //   ElementDisplayedEnabled Element=new ElementDisplayedEnabled ();
 
-        login.isDisplayed();
-        login.isEnabled();
-        login.click();
+        ElementTestClick(login,"login");
+
 
         EmailLogin.isDisplayed();
-        if(Email.isEmpty()){
-            throw new ExceptionInput("Email");
-        }
+        ObjectIsEmpty(Email,"Email");
+
         EmailLogin.sendKeys(Email);
         PassWordLogin.isDisplayed();
 
-        if(Password.isEmpty()){
-            throw new ExceptionInput("Password");
-        }
+        ObjectIsEmpty(Password,"Password");
         PassWordLogin.sendKeys(Password);
-        Thread.sleep(1000);
 
-        loginButton.isDisplayed();
-        loginButton.isEnabled();
-        loginButton.click();
+        ElementTestClick(loginButton,"loginButton");
 
         loginisDisplayed.isDisplayed();
         loginisDisplayed.isEnabled();
+        Thread.sleep(1000);
     }
 }

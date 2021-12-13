@@ -1,5 +1,6 @@
 package Pages;
 
+import HelfMethoden.ExceptionExistence;
 import HelfMethoden.ExceptionInput;
 import HelfMethoden.LoadData;
 import org.openqa.selenium.By;
@@ -10,6 +11,9 @@ import org.openqa.selenium.support.FindBy;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
+import static HelfMethoden.ElementTest.ElementTestClick;
+import static HelfMethoden.ElementTest.ObjectIsEmpty;
 
 
 public class CheckoutPage extends MainPage {
@@ -61,72 +65,75 @@ public class CheckoutPage extends MainPage {
     WebElement OrderEnd;
 
 
-    public void EstimateShippingPage(WebDriver driver) throws InterruptedException, ExceptionInput {
+    public void EstimateShippingPage(WebDriver driver) throws InterruptedException, ExceptionInput, ExceptionExistence {
 
 
         Thread.sleep(500);
         Select CountryMenu = new Select(driver.findElement(By.id("CountryId")));
-        if (Country.isEmpty()) {
+
+        ObjectIsEmpty(Country,"Country");
+        CountryMenu.selectByVisibleText(Country);
+      /*  if (Country.isEmpty()) {
             throw new ExceptionInput("Country");
         } else {
             CountryMenu.selectByVisibleText(Country);
-        }
+        }*/
 
         Select StateProvince1 = new Select(driver.findElement(By.id("StateProvinceId")));
         Thread.sleep(500);
-        // System.out.println(StateProvince1.getFirstSelectedOption());
-        if (StateProvince.isEmpty()) {
+
+        ObjectIsEmpty(StateProvince,"StateProvince");
+        StateProvince1.selectByVisibleText(StateProvince);
+       /* if (StateProvince.isEmpty()) {
             throw new ExceptionInput("StateProvince");
         } else {
             StateProvince1.selectByVisibleText(StateProvince);
-        }
+        }*/
 
         // Thread.sleep(500);
         ZipPostalCode1.clear();
-        if (ZipPostalCode.isEmpty()) {
+        ObjectIsEmpty(ZipPostalCode,"ZipPostalCode");
+        ZipPostalCode1.sendKeys(ZipPostalCode);
+       /* if (ZipPostalCode.isEmpty()) {
             throw new ExceptionInput("ZipPostalCode");
         } else {
             ZipPostalCode1.sendKeys(ZipPostalCode);
-        }
+        }*/
         //Thread.sleep(500);
 
         Agree.click();
         // Thread.sleep(500);
-        CheckoutButton.isDisplayed();
-        CheckoutButton.isEnabled();
-        CheckoutButton.click();
+
+        ElementTestClick(CheckoutButton,"CheckoutButton");
 
     }
 
-    public void BillingAddressPage() throws InterruptedException {
+    public void BillingAddressPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
-        BillingAddressButton.isDisplayed();
-        BillingAddressButton.isEnabled();
-        BillingAddressButton.click();
+        ElementTestClick(BillingAddressButton,"BillingAddressButton");
 
     }
 
-    public void ShippingAddressPage() throws InterruptedException {
+    public void ShippingAddressPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
-        ShippingAddressButton.isDisplayed();
-        ShippingAddressButton.isEnabled();
-        ShippingAddressButton.click();
+
+        ElementTestClick(ShippingAddressButton,"ShippingAddressButton");
 
     }
 
-    public void ShippingMethodPage() throws InterruptedException {
+    public void ShippingMethodPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
-        ShippingMethodButton.isDisplayed();
-        ShippingMethodButton.isEnabled();
-        ShippingMethodButton.click();
+       // ShippingMethodButton.isDisplayed();
+       // ShippingMethodButton.isEnabled();
+       // ShippingMethodButton.click();
+        ElementTestClick(ShippingMethodButton,"ShippingMethodButton");
 
     }
 
-    public void PaymentMethodPage() throws InterruptedException {
+    public void PaymentMethodPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
-        PaymentMethodButton.isDisplayed();
-        PaymentMethodButton.isEnabled();
-        PaymentMethodButton.click();
+        ElementTestClick(PaymentMethodButton,"PaymentMethodButton");
+
 
     }
 

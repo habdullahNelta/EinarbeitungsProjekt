@@ -103,8 +103,8 @@ public class RegisterPage extends MainPage {
             ConfirmPassword.sendKeys(Password1);
 
         }
-
         Registerbutton.click();
+
         RegisterisDisplayed.isDisplayed();
         RegisterisDisplayed.isEnabled();
 

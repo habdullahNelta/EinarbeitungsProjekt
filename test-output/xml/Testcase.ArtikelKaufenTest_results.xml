@@ -4,39 +4,39 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="11,267">
+           time="11,271">
     <properties></properties>
 
 
 
             <testcase
-                name="ShoppingCardClickTest"
-                time="2,518"
+                name="AddBook2ToCartTest"
+                time="2,155"
+                classname="Testcase.ArtikelKaufenTest">
+            </testcase>
+            <testcase
+                name="PreisBook2"
+                time="0,360"
+                classname="Testcase.ArtikelKaufenTest">
+            </testcase>
+            <testcase
+                name="PreisBook1"
+                time="0,371"
                 classname="Testcase.ArtikelKaufenTest">
             </testcase>
             <testcase
                 name="UpdateCartTest"
-                time="3,150"
+                time="3,137"
                 classname="Testcase.ArtikelKaufenTest">
             </testcase>
             <testcase
-                name="VerifyPreisBook1"
-                time="0,372"
-                classname="Testcase.ArtikelKaufenTest">
-            </testcase>
-            <testcase
-                name="AddBook2ToCartTest"
-                time="2,140"
-                classname="Testcase.ArtikelKaufenTest">
-            </testcase>
-            <testcase
-                name="VerifyPreisBook2"
-                time="0,373"
+                name="ShoppingCardClickTest"
+                time="2,544"
                 classname="Testcase.ArtikelKaufenTest">
             </testcase>
             <testcase
                 name="AddBook1ToCartTest"
-                time="2,714"
+                time="2,704"
                 classname="Testcase.ArtikelKaufenTest">
             </testcase>
 </testsuite>

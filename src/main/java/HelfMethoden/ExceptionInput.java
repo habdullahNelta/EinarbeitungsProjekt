@@ -8,4 +8,10 @@ public class ExceptionInput extends Throwable {
         System.out.println("Fehler! Bitte "+Eingabe+" in TestData Eingeben");
 
     }
+    public  ExceptionInput() {
+
+      //  System.out.println("Fehler! Bitte "+Eingabe+" in TestData Eingeben");
+
+    }
+
 }

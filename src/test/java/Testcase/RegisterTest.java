@@ -15,5 +15,6 @@ public class RegisterTest extends TestBase {
     @Test public void RegisterTest1() throws ExceptionInput {
         Register = new RegisterPage(driver);
         Register.Register();
+
     }
 }

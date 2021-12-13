@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import static HelfMethoden.ElementTest.ElementTestClick;
+
 
 public class ArtikelKaufenPage extends MainPage {
     public ArtikelKaufenPage(WebDriver driver) {
@@ -35,14 +37,13 @@ public class ArtikelKaufenPage extends MainPage {
     WebElement Book3Delete;
 
 
-    public void AddBooksToCartPage() throws InterruptedException {
-        openBooksMenu.isDisplayed();
-        openBooksMenu.isEnabled();
-        openBooksMenu.click();
+    public void AddBooksToCartPage() throws InterruptedException, ExceptionExistence {
 
-        AddBook1ToCart.isDisplayed();
-        AddBook1ToCart.isEnabled();
-        AddBook1ToCart.click();
+        ElementTestClick(openBooksMenu,"openBooksMenu");
+
+
+        ElementTestClick(AddBook1ToCart,"AddBook1ToCart");
+
         Thread.sleep(1000);
 
         AddBookToCartisDisplayed.isDisplayed();
@@ -67,17 +68,15 @@ public class ArtikelKaufenPage extends MainPage {
         Book1Doppelt.clear();
         Book1Doppelt.sendKeys("2");
         Thread.sleep(200);
-        if (Book3Delete.isEnabled() && Book3Delete.isDisplayed()) {
+
+      /*  if (Book3Delete.isEnabled() && Book3Delete.isDisplayed()) {
             Book3Delete.click();
         } else {
             throw new ExceptionExistence("Book Delete button");
-        }
-        if (UpdateCartClick.isDisplayed() && UpdateCartClick.isEnabled()) {
-            UpdateCartClick.click();
-        } else {
-            throw new ExceptionExistence("UpdateCart button");
-        }
-        // Thread.sleep(1000);
+        }*/
+        ElementTestClick(Book3Delete,"Book Delete button");
 
+
+        ElementTestClick(UpdateCartClick,"UpdateCart button");
     }
 }
