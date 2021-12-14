@@ -9,7 +9,6 @@ public class OpenFile {
 
     // öffnen html Test Report
     public void OpenTestReport() {
-
         try {
             //constructor of file class having file as argument
             File file = new File(FileLoction + "\\test-output\\html\\index.html");
@@ -20,7 +19,7 @@ public class OpenFile {
             }
             Desktop desktop = Desktop.getDesktop();
             if (file.exists())         //checks file exists or not
-                desktop.open(file);              //opens the specified file
+                desktop.open(file);    //opens the specified file
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -28,7 +27,6 @@ public class OpenFile {
 
     // öffnen der Test StartWerte, die in "TestData.properties" geschrieben sind.
     public void OpenTestDate() {
-
         try {
             //constructor of file class having file as argument
             File file = new File(FileLoction + "\\src\\main\\java\\HelfMethoden\\TestData.properties");
@@ -39,7 +37,7 @@ public class OpenFile {
             }
             Desktop desktop = Desktop.getDesktop();
             if (file.exists())         //checks file exists or not
-                desktop.open(file);              //opens the specified file
+                desktop.open(file);    //opens the specified file
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,11 +45,9 @@ public class OpenFile {
 
     // öffnung des Orders Screenshot
     public void OpenScreenshot() {
-
         try {
             //constructor of file class having file as argument
             File file = new File(FileLoction + "\\Screenshots");
-
             if (!Desktop.isDesktopSupported())//check if Desktop is supported by Platform or not
             {
                 System.out.println("not supported");
@@ -59,7 +55,7 @@ public class OpenFile {
             }
             Desktop desktop = Desktop.getDesktop();
             if (file.exists())         //checks file exists or not
-                desktop.open(file);              //opens the specified file
+                desktop.open(file);    //opens the specified file
         } catch (Exception e) {
             e.printStackTrace();
         }

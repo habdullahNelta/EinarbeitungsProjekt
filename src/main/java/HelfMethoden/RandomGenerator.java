@@ -1,9 +1,10 @@
 package HelfMethoden;
+
+
+
 //in dieser Klasse werden zufällige Werte z.b Email in Register generiert
-
-
-// function to generate a random string of length n (without number)
 public class RandomGenerator {
+    // function to generate a random string of length n (without number)
     static public String RandomString(int length) {
         // chose a Character random from this String
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -69,5 +70,4 @@ public class RandomGenerator {
         return Math.random() < 0.5;
         // I tried another approaches here, still the same result
     }
-
 }

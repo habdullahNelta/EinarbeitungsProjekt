@@ -1,5 +1,6 @@
 package Pages;
 
+import HelfMethoden.ExceptionExistence;
 import HelfMethoden.ExceptionInput;
 import HelfMethoden.LoadData;
 import HelfMethoden.RandomGenerator;
@@ -7,8 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterPage extends MainPage {
+import static HelfMethoden.ElementTest.ElementTestClick;
 
+//klasse für Register Testen
+//falls keine Werte in TestData existieren, dann werden zufällige Werten eingegeben
+public class RegisterPage extends MainPage {
 
     public static String PasswordRegister = RandomGenerator.RandomNumber(6);
     String Firstname1 = LoadData.userData.getProperty("Firstname");
@@ -54,38 +58,29 @@ public class RegisterPage extends MainPage {
     @FindBy(className = "ico-logout")
     WebElement logout;
 
-    public void Register() throws ExceptionInput {
-        RegisterMenu.isDisplayed();
-        RegisterMenu.isEnabled();
-        RegisterMenu.click();
+    public void Register() throws ExceptionInput, ExceptionExistence {
+
+        ElementTestClick(RegisterMenu, "RegisterMenu");
 
         //Random Generator für Auswahl radio button male oder radio button FemaleButton
         if (Gender.isEmpty()) {
             if (RandomGenerator.RandomBoolean()) {
-                MaleButton.isDisplayed();
-                MaleButton.isEnabled();
-                MaleButton.click();
+                ElementTestClick(MaleButton, "MaleButton");
             } else {
-                FemaleButton.isDisplayed();
-                FemaleButton.isEnabled();
-                FemaleButton.click();
+                ElementTestClick(FemaleButton, "FemaleButton");
             }
         } else {//falls werte für Gender vorhanden sind
             if (Gender.equals("M") || Gender.equals("m")) {
-                MaleButton.isDisplayed();
-                MaleButton.isEnabled();
-                MaleButton.click();
+                ElementTestClick(MaleButton, "MaleButton");
 
             } else if (Gender.equals("F") || Gender.equals("f")) {
-                FemaleButton.isDisplayed();
-                FemaleButton.isEnabled();
-                FemaleButton.click();
+                ElementTestClick(FemaleButton, "FemaleButton");
 
             } else {
-                throw new  ExceptionInput("nur F Oder M");
+                throw new ExceptionInput("nur F Oder M");
             }
-        }
-        if (Firstname1.isEmpty() || Lastname1.isEmpty()||Email1.isEmpty()||Password1.isEmpty()) {
+        }//überprüfung, ob die Werte in TestData existieren
+        if (Firstname1.isEmpty() || Lastname1.isEmpty() || Email1.isEmpty() || Password1.isEmpty()) {
 
             FirstName.sendKeys(RandomGenerator.RandomString(5));
             LastName.sendKeys(RandomGenerator.RandomString(5));
@@ -96,6 +91,7 @@ public class RegisterPage extends MainPage {
             System.out.println("Hinweis: es werden zufälligen Werte für Email und Password eingegebn," +
                     "\n" + " denn Firstname odre Lastname ist nicht TestDate eingegeben");
         } else {
+            //sonst werden die Werte von TestData angewendet
             FirstName.sendKeys(Firstname1);
             LastName.sendKeys(Lastname1);
             Email.sendKeys(Email1);
@@ -103,13 +99,11 @@ public class RegisterPage extends MainPage {
             ConfirmPassword.sendKeys(Password1);
 
         }
-        Registerbutton.click();
-
+        ElementTestClick(Registerbutton, "Registerbutton");
+        //überprufung, ob register erfolgreich ist
         RegisterisDisplayed.isDisplayed();
         RegisterisDisplayed.isEnabled();
 
-        logout.isDisplayed();
-        logout.isEnabled();
-        logout.click();
+        ElementTestClick(logout, "logout");
     }
 }

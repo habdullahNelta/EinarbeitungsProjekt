@@ -2,12 +2,10 @@ package HelfMethoden;
 
 import javax.swing.*;
 
-
-public class GUI {
-
-    private  static   String Test;
-    //To-Do
-
+//TODO
+public class GUI {/*
+    //anzeigen von warnung Fenster
+    private static String Test;
 
     public static String getTest() {
         return Test;
@@ -24,9 +22,5 @@ public class GUI {
         JFrame frame = new JFrame("JOptionPane showMessageDialog example");
         //show a joptionpane dialog using showMessageDialog
         JOptionPane.showMessageDialog(frame, Text);
-    }
-
-
-
-
+    }*/
 }

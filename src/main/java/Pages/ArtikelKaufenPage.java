@@ -2,18 +2,23 @@ package Pages;
 
 
 import HelfMethoden.ExceptionExistence;
+import HelfMethoden.ExceptionInput;
+import HelfMethoden.LoadData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import static HelfMethoden.ElementTest.ElementTestClick;
+import static HelfMethoden.ElementTest.StringIsEmpty;
 
-
+//
 public class ArtikelKaufenPage extends MainPage {
     public ArtikelKaufenPage(WebDriver driver) {
         super(driver);
     }
+
+    private final String QuantityBook1 = LoadData.userData.getProperty("QuantityBook1");
 
     @FindBy(xpath = "/html/body/div[4]/div[1]/div[2]/ul[1]/li[1]/a")
     WebElement openBooksMenu;
@@ -36,22 +41,21 @@ public class ArtikelKaufenPage extends MainPage {
     @FindBy(xpath = "/html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/form/table/tbody/tr[2]/td[1]/input")
     WebElement Book3Delete;
 
+    //verschieben book1 in den Warenkorb
+    public void AddBook1ToCartPage() throws InterruptedException, ExceptionExistence {
 
-    public void AddBooksToCartPage() throws InterruptedException, ExceptionExistence {
+        ElementTestClick(openBooksMenu, "openBooksMenu");
 
-        ElementTestClick(openBooksMenu,"openBooksMenu");
-
-
-        ElementTestClick(AddBook1ToCart,"AddBook1ToCart");
+        ElementTestClick(AddBook1ToCart, "AddBook1ToCart");
 
         Thread.sleep(1000);
 
         AddBookToCartisDisplayed.isDisplayed();
         Assert.assertEquals(AddBookToCartisDisplayed.getText(),
                 "The product has been added to your shopping cart");
-
     }
 
+    //verschieben book2 in den Warenkorb
     public void AddBooks2ToCartPage() throws InterruptedException {
         AddBookToCartisDisplayed.isDisplayed();
         AddBook2ToCart.click();
@@ -62,21 +66,22 @@ public class ArtikelKaufenPage extends MainPage {
                 "The product has been added to your shopping cart");
     }
 
-    public void UpdateCartPage() throws InterruptedException, ExceptionExistence {
-
+    //book1 zweimal bestellen mit update des Warenkorbs
+    public void UpdateCartPage() throws InterruptedException, ExceptionExistence, ExceptionInput {
         Thread.sleep(200);
+        StringIsEmpty(QuantityBook1, "QuantityBook1");
+        //System.out.println("moin");
         Book1Doppelt.clear();
-        Book1Doppelt.sendKeys("2");
+        Book1Doppelt.sendKeys(QuantityBook1);
         Thread.sleep(200);
 
-      /*  if (Book3Delete.isEnabled() && Book3Delete.isDisplayed()) {
+        /*if (Book3Delete.isEnabled() && Book3Delete.isDisplayed()) {
             Book3Delete.click();
         } else {
             throw new ExceptionExistence("Book Delete button");
         }*/
-        ElementTestClick(Book3Delete,"Book Delete button");
+        ElementTestClick(Book3Delete, "Book Delete button");
 
-
-        ElementTestClick(UpdateCartClick,"UpdateCart button");
+        ElementTestClick(UpdateCartClick, "UpdateCart button");
     }
 }

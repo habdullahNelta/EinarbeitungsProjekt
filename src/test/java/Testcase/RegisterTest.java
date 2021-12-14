@@ -1,5 +1,6 @@
 package Testcase;
 
+import HelfMethoden.ExceptionExistence;
 import HelfMethoden.ExceptionInput;
 import HelfMethoden.TestNGListener;
 import Pages.RegisterPage;
@@ -11,10 +12,8 @@ public class RegisterTest extends TestBase {
 
     RegisterPage Register;
 
-
-    @Test public void RegisterTest1() throws ExceptionInput {
+    @Test public void RegisterTest1() throws ExceptionInput, ExceptionExistence {
         Register = new RegisterPage(driver);
         Register.Register();
-
     }
 }

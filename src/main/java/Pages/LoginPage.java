@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static HelfMethoden.ElementTest.ElementTestClick;
-import static HelfMethoden.ElementTest.ObjectIsEmpty;
+import static HelfMethoden.ElementTest.StringIsEmpty;
 
 
 ///für Login schreibt mann alle mögliche bottun oder felder oder .....
@@ -22,36 +22,33 @@ public class LoginPage extends MainPage {
     String Email = LoadData.userData.getProperty("Email");
     String Password = LoadData.userData.getProperty("Password");
 
-    //Login Click
-    @FindBy(className = "ico-login")////////////////////////////////
+    //Login button in menulist
+    @FindBy(className = "ico-login")
     WebElement login;
 
-    //Email-Login Eingabe
+    //Email feld
     @FindBy(id = "Email")
     WebElement EmailLogin;
-
+// Password feld
     @FindBy(id = "Password")
     WebElement PassWordLogin;
 
     @FindBy(className = "login-button")
     WebElement loginButton;
-
+// für bestätigung von Login
     @FindBy(xpath = " /html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a")
     WebElement loginisDisplayed;
 
     public void login() throws ExceptionInput, InterruptedException, ExceptionExistence {
-     //   ElementDisplayedEnabled Element=new ElementDisplayedEnabled ();
 
         ElementTestClick(login,"login");
 
-
         EmailLogin.isDisplayed();
-        ObjectIsEmpty(Email,"Email");
-
+        StringIsEmpty(Email,"Email");
         EmailLogin.sendKeys(Email);
-        PassWordLogin.isDisplayed();
 
-        ObjectIsEmpty(Password,"Password");
+        PassWordLogin.isDisplayed();
+        StringIsEmpty(Password,"Password");
         PassWordLogin.sendKeys(Password);
 
         ElementTestClick(loginButton,"loginButton");

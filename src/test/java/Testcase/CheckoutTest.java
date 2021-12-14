@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+//Test von CheckoutTest mit PreiseTest
 @Listeners(TestNGListener.class)
 public class CheckoutTest extends TestBase {
     ArtikelKaufenPage Books;
@@ -26,22 +27,10 @@ public class CheckoutTest extends TestBase {
         Login.login();
     }
 
-
-    /*@BeforeTest
-    public void BeforeTest1() {
-        TestNG Obj = new TestNG();
-        String TestLoction = System.getProperty("user.dir");
-        List<String> suites = new ArrayList<String>();
-        suites.add(TestLoction + "\\XMLDate\\ArtikelKaufenTest.xml");
-        Obj.setTestSuites(suites);
-        Obj.run();
-    }*/
-
-
     @Test(priority = 1)
     public void AddBook1ToCartTest() throws InterruptedException, ExceptionExistence {
         Books = new ArtikelKaufenPage(driver);
-        Books.AddBooksToCartPage();
+        Books.AddBook1ToCartPage();
         Thread.sleep(1000);
     }
 
@@ -50,7 +39,6 @@ public class CheckoutTest extends TestBase {
         Books.AddBooks2ToCartPage();
         Thread.sleep(1000);
     }
-
 
     @Test(priority = 3)
     public void ShoppingCardClickTest() throws InterruptedException {
@@ -71,11 +59,10 @@ public class CheckoutTest extends TestBase {
     public void PreisBook2() throws InterruptedException {
         Thread.sleep(200);
         Preise.VerifyTolalPreisBook2(24);
-
     }
 
     @Test(priority = 6)
-    public void UpdateCartTest() throws InterruptedException, ExceptionExistence {
+    public void UpdateCartTest() throws InterruptedException, ExceptionExistence, ExceptionInput {
         Thread.sleep(1000);
         Books.UpdateCartPage();
     }

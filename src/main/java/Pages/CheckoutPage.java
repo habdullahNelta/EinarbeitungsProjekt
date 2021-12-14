@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import static HelfMethoden.ElementTest.ElementTestClick;
-import static HelfMethoden.ElementTest.ObjectIsEmpty;
+import static HelfMethoden.ElementTest.StringIsEmpty;
 
 
 public class CheckoutPage extends MainPage {
@@ -64,14 +64,12 @@ public class CheckoutPage extends MainPage {
     @FindBy(xpath = " /html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/div[2]/input")
     WebElement OrderEnd;
 
-
     public void EstimateShippingPage(WebDriver driver) throws InterruptedException, ExceptionInput, ExceptionExistence {
-
 
         Thread.sleep(500);
         Select CountryMenu = new Select(driver.findElement(By.id("CountryId")));
 
-        ObjectIsEmpty(Country,"Country");
+        StringIsEmpty(Country,"Country");
         CountryMenu.selectByVisibleText(Country);
       /*  if (Country.isEmpty()) {
             throw new ExceptionInput("Country");
@@ -81,60 +79,36 @@ public class CheckoutPage extends MainPage {
 
         Select StateProvince1 = new Select(driver.findElement(By.id("StateProvinceId")));
         Thread.sleep(500);
-
-        ObjectIsEmpty(StateProvince,"StateProvince");
+        StringIsEmpty(StateProvince,"StateProvince");
         StateProvince1.selectByVisibleText(StateProvince);
-       /* if (StateProvince.isEmpty()) {
-            throw new ExceptionInput("StateProvince");
-        } else {
-            StateProvince1.selectByVisibleText(StateProvince);
-        }*/
-
         // Thread.sleep(500);
         ZipPostalCode1.clear();
-        ObjectIsEmpty(ZipPostalCode,"ZipPostalCode");
+        StringIsEmpty(ZipPostalCode,"ZipPostalCode");
         ZipPostalCode1.sendKeys(ZipPostalCode);
-       /* if (ZipPostalCode.isEmpty()) {
-            throw new ExceptionInput("ZipPostalCode");
-        } else {
-            ZipPostalCode1.sendKeys(ZipPostalCode);
-        }*/
         //Thread.sleep(500);
-
         Agree.click();
-        // Thread.sleep(500);
-
+         Thread.sleep(1000);
         ElementTestClick(CheckoutButton,"CheckoutButton");
-
     }
 
     public void BillingAddressPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
         ElementTestClick(BillingAddressButton,"BillingAddressButton");
-
     }
 
     public void ShippingAddressPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
-
         ElementTestClick(ShippingAddressButton,"ShippingAddressButton");
-
     }
 
     public void ShippingMethodPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
-       // ShippingMethodButton.isDisplayed();
-       // ShippingMethodButton.isEnabled();
-       // ShippingMethodButton.click();
         ElementTestClick(ShippingMethodButton,"ShippingMethodButton");
-
     }
 
     public void PaymentMethodPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
         ElementTestClick(PaymentMethodButton,"PaymentMethodButton");
-
-
     }
 
     public void PaymentInformationPage() throws InterruptedException {
@@ -144,7 +118,6 @@ public class CheckoutPage extends MainPage {
         PaymentInformationButton.isDisplayed();
         PaymentInformationButton.isEnabled();
         PaymentInformationButton.click();
-
     }
 
     public void ConfirmOrderPage() throws InterruptedException {
@@ -153,7 +126,6 @@ public class CheckoutPage extends MainPage {
         ConfirmOrderButton.isDisplayed();
         ConfirmOrderButton.isEnabled();
         ConfirmOrderButton.click();
-
     }
 
     public void successOrderPage() throws InterruptedException {
@@ -168,6 +140,5 @@ public class CheckoutPage extends MainPage {
         Thread.sleep(500);
         OrderEnd.isDisplayed();
         OrderEnd.click();
-
     }
 }

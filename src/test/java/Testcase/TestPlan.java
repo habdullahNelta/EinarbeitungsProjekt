@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 /**
  * @author Hasan Abdullah
  */
+//hier wird der gesammte Test durchgeführt
 @Listeners(TestNGListener.class)
 public class TestPlan extends TestBase {
      RegisterPage Register;
@@ -21,7 +22,7 @@ public class TestPlan extends TestBase {
 
 
     @Test(priority = 1,groups = "Register")
-    public void RegisterTest() throws ExceptionInput {
+    public void RegisterTest() throws ExceptionInput, ExceptionExistence {
         Register = new RegisterPage(driver);
         Register.Register();
     }
@@ -35,7 +36,7 @@ public class TestPlan extends TestBase {
     @Test(priority = 3,groups ="Artikelkaufen" )
     public void AddBook1ToCartTest() throws InterruptedException, ExceptionExistence {
         Books = new ArtikelKaufenPage(driver);
-        Books.AddBooksToCartPage();
+        Books.AddBook1ToCartPage();
        // Thread.sleep(1000);
     }
 
@@ -64,7 +65,7 @@ public class TestPlan extends TestBase {
 
     }
     @Test(priority = 8,groups = "Artikelkaufen")
-    public void UpdateCartTest() throws InterruptedException, ExceptionExistence {
+    public void UpdateCartTest() throws InterruptedException, ExceptionExistence, ExceptionInput {
         Books.UpdateCartPage();
     }
 
