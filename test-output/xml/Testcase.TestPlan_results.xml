@@ -4,94 +4,94 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="18,455">
+           time="18,587">
     <properties></properties>
 
 
 
             <testcase
-                name="ShoppingCardClickTest"
-                time="0,707"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="UpdateCartTest"
-                time="1,142"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="AddBook2ToCartTest"
-                time="1,132"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="OrderEndTest"
-                time="0,885"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="BillingAddressTest"
-                time="0,603"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="AddBook1ToCartTest"
-                time="1,632"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="ShippingAddressTest"
-                time="0,595"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="ConfirmOrderTest"
-                time="0,599"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="PaymentInformationTest"
-                time="0,638"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="successOrderTest"
-                time="1,050"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="LoginTest"
-                time="2,243"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="PreisBook1"
-                time="0,383"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
                 name="PreisBook2"
-                time="0,367"
+                time="0,331"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
                 name="PaymentMethodTest"
-                time="0,610"
+                time="0,597"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
-                name="ShippingMethodTest"
-                time="0,591"
+                name="AddBook1ToCartTest"
+                time="1,544"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
                 name="RegisterTest"
-                time="2,098"
+                time="1,927"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="LoginTest"
+                time="2,002"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ShoppingCardClickTest"
+                time="0,525"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
                 name="EstimateShippingTest"
-                time="3,180"
+                time="3,049"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="successOrderTest"
+                time="2,044"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="OrderEndTest"
+                time="0,901"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ConfirmOrderTest"
+                time="0,614"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="UpdateCartTest"
+                time="1,131"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="PreisBook1"
+                time="0,348"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="BillingAddressTest"
+                time="0,598"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="AddBook2ToCartTest"
+                time="1,138"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ShippingAddressTest"
+                time="0,600"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ShippingMethodTest"
+                time="0,598"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="PaymentInformationTest"
+                time="0,640"
                 classname="Testcase.TestPlan">
             </testcase>
 </testsuite>

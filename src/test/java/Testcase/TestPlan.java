@@ -47,7 +47,7 @@ public class TestPlan extends TestBase {
     }
 
     @Test(priority = 5,groups = "Artikelkaufen")
-    public void ShoppingCardClickTest()  {
+    public void ShoppingCardClickTest() throws ExceptionExistence {
         Preise = new VerifyPreisPage(driver);
         Preise.ShoppingCardClickPage();
       //  Thread.sleep(500);
@@ -96,12 +96,12 @@ public class TestPlan extends TestBase {
     }
 
     @Test (priority = 14,groups = "Checkout")
-    public void PaymentInformationTest() throws InterruptedException {
+    public void PaymentInformationTest() throws InterruptedException, ExceptionExistence {
         Checkout.PaymentInformationPage();
     }
 
     @Test (priority = 15,groups = "Checkout")
-    public void ConfirmOrderTest() throws InterruptedException {
+    public void ConfirmOrderTest() throws InterruptedException, ExceptionExistence {
         Checkout.ConfirmOrderPage();
     }
 
@@ -111,7 +111,7 @@ public class TestPlan extends TestBase {
     }
 
     @Test (priority = 17,groups = "Checkout")
-    public void OrderEndTest() throws InterruptedException {
+    public void OrderEndTest() throws InterruptedException, ExceptionExistence {
         Checkout.OrderEndPage();
     }
 }

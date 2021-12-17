@@ -19,5 +19,4 @@ public class LoginTest extends TestBase {
         Login = new LoginPage(driver);
         Login.login();
     }
-
 }

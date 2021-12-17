@@ -3,6 +3,7 @@ package Testcase;
 import HelfMethoden.FormatedDate;
 import HelfMethoden.LoadData;
 import HelfMethoden.OpenFile;
+import HelfMethoden.TestNGListener;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -13,10 +14,15 @@ import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.testng.IResultMap;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
+
+import static HelfMethoden.Input.InputString1;
 
 
 public class TestBase {
@@ -83,16 +89,14 @@ public class TestBase {
             String[] phantomJsArgument = {"--webdriver-loglevel=NONE", "--web-security=no", "--ignore-ssl-errors=yes"};
             des.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, phantomJsArgument);
             driver = new PhantomJSDriver(des);
-
         }
         driver.navigate().to(WebAppPath);
-       // driver.manage().window().maximize();
+        driver.manage().window().maximize();
         // driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     }
 
     @AfterMethod
     public void TearDown(ITestResult result) {
-
         // Here will compare if test is failing then only it will enter into if condition
         if (ITestResult.FAILURE == result.getStatus()) {
             try {
@@ -109,16 +113,15 @@ public class TestBase {
             } catch (Exception e) {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
+            result.getStatus();
         }
     }
 
     @AfterSuite
     public void QuitDriver() throws InterruptedException {
-
-        Thread.sleep(2000);
-        driver.quit();
         Thread.sleep(1000);
-        //Report = new OpenFile();
-       // Report.OpenTestReport();
+        driver.quit();
+        Report = new OpenFile();
+        Report.OpenTestReport();
     }
 }

@@ -12,22 +12,23 @@ public class TestNGListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("\n"+"on Test Start: " + result.getName());
+        System.out.println("\n"+"--------------------Test Start "+  result.getName());
+       // System.out.println("\n"+"Test Start: " + result.getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("on Test Success: " + result.getName());
+        System.out.println("Test Success: " + result.getName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("on Test Failure: " + result.getName());
+        System.out.println("Test Failure: " + result.getName());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        System.out.println("on Test Failure: " + result.getName());
+        System.out.println("Test Skipped: " + result.getName()+":");
     }
 
     @Override
@@ -44,13 +45,23 @@ public class TestNGListener implements ITestListener {
     @Override
     public void onStart(ITestContext context) {
         ITestListener.super.onStart(context);
-        System.out.println("on Start: " + context.getName());
+        System.out.println("====================Start Test  "+ context.getName()+"====================");
+       // System.out.println("on Start: " + context.getName());
     }
 
     @Override
     public void onFinish(ITestContext context) {
         ITestListener.super.onFinish(context);
-        System.out.println("\n"+"on Finish: " + context.getName());
-    }
+        System.out.println("\n"+"====================Finish Test  "+ context.getName()+"===================");
+        //System.out.println("\n"+"on Finish: " + context.getName());
+       // result.getStatus();
 
+    }
+   /* public void  EndResult(ITestContext context) {
+        //ITestListener.super.onFinish(context);
+        System.out.println("\n"+ context.getPassedTests());
+        //System.out.println("\n"+"on Finish: " + context.getName());
+        // result.getStatus();
+
+    }*/
 }

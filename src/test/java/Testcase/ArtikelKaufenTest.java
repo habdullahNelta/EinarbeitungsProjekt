@@ -39,7 +39,7 @@ public class ArtikelKaufenTest extends TestBase {
     }
 
     @Test(priority = 3)
-    public void ShoppingCardClickTest() throws InterruptedException {
+    public void ShoppingCardClickTest() throws InterruptedException, ExceptionExistence {
         Preise = new VerifyPreisPage(driver);
         Preise.ShoppingCardClickPage();
         Thread.sleep(2000);

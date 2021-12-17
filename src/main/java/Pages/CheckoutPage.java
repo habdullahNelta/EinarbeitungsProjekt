@@ -6,12 +6,9 @@ import HelfMethoden.LoadData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import org.openqa.selenium.support.FindBy;
-
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
 import static HelfMethoden.ElementTest.ElementTestClick;
 import static HelfMethoden.ElementTest.StringIsEmpty;
 
@@ -24,9 +21,7 @@ public class CheckoutPage extends MainPage {
 
     public CheckoutPage(WebDriver driver) {
         super(driver);
-
     }
-
 
     @FindBy(id = "ZipPostalCode")
     WebElement ZipPostalCode1;
@@ -68,26 +63,26 @@ public class CheckoutPage extends MainPage {
 
         Thread.sleep(500);
         Select CountryMenu = new Select(driver.findElement(By.id("CountryId")));
-
         StringIsEmpty(Country,"Country");
         CountryMenu.selectByVisibleText(Country);
-      /*  if (Country.isEmpty()) {
+        /*  if (Country.isEmpty()) {
             throw new ExceptionInput("Country");
         } else {
             CountryMenu.selectByVisibleText(Country);
         }*/
-
         Select StateProvince1 = new Select(driver.findElement(By.id("StateProvinceId")));
         Thread.sleep(500);
         StringIsEmpty(StateProvince,"StateProvince");
         StateProvince1.selectByVisibleText(StateProvince);
+
         // Thread.sleep(500);
         ZipPostalCode1.clear();
         StringIsEmpty(ZipPostalCode,"ZipPostalCode");
         ZipPostalCode1.sendKeys(ZipPostalCode);
-        //Thread.sleep(500);
-        Agree.click();
-         Thread.sleep(1000);
+
+        ElementTestClick(Agree,"Agree");
+
+        Thread.sleep(1000);
         ElementTestClick(CheckoutButton,"CheckoutButton");
     }
 
@@ -111,34 +106,33 @@ public class CheckoutPage extends MainPage {
         ElementTestClick(PaymentMethodButton,"PaymentMethodButton");
     }
 
-    public void PaymentInformationPage() throws InterruptedException {
+    public void PaymentInformationPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
         PaymentInformation.isDisplayed();
         System.out.println(PaymentInformation.getText());
-        PaymentInformationButton.isDisplayed();
-        PaymentInformationButton.isEnabled();
-        PaymentInformationButton.click();
+
+        ElementTestClick(PaymentInformationButton,"PaymentInformationButton");
     }
 
-    public void ConfirmOrderPage() throws InterruptedException {
+    public void ConfirmOrderPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
-
-        ConfirmOrderButton.isDisplayed();
-        ConfirmOrderButton.isEnabled();
-        ConfirmOrderButton.click();
+        ElementTestClick(ConfirmOrderButton,"ConfirmOrderButton");
+       // ConfirmOrderButton.isDisplayed();
+       // ConfirmOrderButton.isEnabled();
+       // ConfirmOrderButton.click();
     }
 
     public void successOrderPage() throws InterruptedException {
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         successOrderText.isDisplayed();
         Assert.assertEquals(successOrderText.getText(),
                 "Your order has been successfully processed!");
+
     }
 
-    public void OrderEndPage() throws InterruptedException {
+    public void OrderEndPage() throws InterruptedException, ExceptionExistence {
         Thread.sleep(500);
-        OrderEnd.isDisplayed();
-        OrderEnd.click();
+        ElementTestClick(OrderEnd,"OrderEnd");
     }
 }

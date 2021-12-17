@@ -74,7 +74,6 @@ public class ArtikelKaufenPage extends MainPage {
         Book1Doppelt.clear();
         Book1Doppelt.sendKeys(QuantityBook1);
         Thread.sleep(200);
-
         /*if (Book3Delete.isEnabled() && Book3Delete.isDisplayed()) {
             Book3Delete.click();
         } else {

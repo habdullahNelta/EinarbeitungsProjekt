@@ -1,5 +1,6 @@
 package Pages;
 
+import HelfMethoden.ExceptionExistence;
 import HelfMethoden.ExceptionInput;
 import HelfMethoden.LoadData;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import static HelfMethoden.ElementTest.ElementTestClick;
 import static HelfMethoden.ElementTest.StringIsEmpty;
 
 // hier werden die Preise mit den gegebeben Preisen überpruft
@@ -17,7 +19,7 @@ public class VerifyPreisPage extends MainPage {
 
     float[][] Price = new float[2][4];
     /*
-    *  ____|Price| Qty |Total |gegeben preis
+    * _____|Price| Qty |Total |gegeben preis
     * book1| 00  | 01  |02    |03
     * book2| 10  | 11  |12    |13
     * */
@@ -43,12 +45,10 @@ public class VerifyPreisPage extends MainPage {
     @FindBy(linkText = "Shopping cart")
     WebElement ShoppingCard ;
 
-
-    public void ShoppingCardClickPage() {
-        ShoppingCard.isEnabled();
-        ShoppingCard.isDisplayed();
-        ShoppingCard.click();
+    public void ShoppingCardClickPage() throws ExceptionExistence {
+        ElementTestClick(ShoppingCard,"ShoppingCard");
     }
+
     //überprufung des Preises des ersten Buchs
     public void VerifyTolalPreisBook1() throws ExceptionInput {
         StringIsEmpty(LoadData.userData.getProperty("PriceBook1"),"PriceBook1");
@@ -65,7 +65,7 @@ public class VerifyPreisPage extends MainPage {
         Assert.assertEquals(Float.parseFloat(OneBook1Price.getText()),Price[0][3]
                 ,"Preis Book1 ist nicht wie erwartet");
 
-         System.out.println("One Book1 Price: " + Price[0][0] + ", " +
+         System.out.println("One Book1 Price from APP: " + Price[0][0] + ", " +
                 " Qty Book1 Price: " +  Price[0][1] + ", " +
                 "  Total Book1 Price:  " +Price[0][2] );
       //  Thread.sleep(500);
@@ -81,7 +81,7 @@ public class VerifyPreisPage extends MainPage {
         Assert.assertEquals(Float.parseFloat(OneBook2Price.getText()),GegebnePriesBook2
                 ,"Preis Book2 ist nicht wie erwartet");
 
-        System.out.println("One Book2 Price: " + OneBook2Price.getText() + ", " +
+        System.out.println("One Book2 Price from APP: " + OneBook2Price.getText() + ", " +
                 " Qty Book2 Price: " + QtyBook2Price.getAttribute("value") + ", " +
                 "  Total Book2 Price:  " + TotalBook2Price.getText());
     }

@@ -41,7 +41,7 @@ public class CheckoutTest extends TestBase {
     }
 
     @Test(priority = 3)
-    public void ShoppingCardClickTest() throws InterruptedException {
+    public void ShoppingCardClickTest() throws InterruptedException, ExceptionExistence {
         Preise = new VerifyPreisPage(driver);
         Preise.ShoppingCardClickPage();
         Thread.sleep(1000);
@@ -63,8 +63,8 @@ public class CheckoutTest extends TestBase {
 
     @Test(priority = 6)
     public void UpdateCartTest() throws InterruptedException, ExceptionExistence, ExceptionInput {
-        Thread.sleep(1000);
         Books.UpdateCartPage();
+        Thread.sleep(500);
     }
 
     @Test(priority = 7)
@@ -94,12 +94,12 @@ public class CheckoutTest extends TestBase {
     }
 
     @Test(priority = 12)
-    public void PaymentInformationTest() throws InterruptedException {
+    public void PaymentInformationTest() throws InterruptedException, ExceptionExistence {
         Checkout.PaymentInformationPage();
     }
 
     @Test(priority = 13)
-    public void ConfirmOrderTest() throws InterruptedException {
+    public void ConfirmOrderTest() throws InterruptedException, ExceptionExistence {
         Checkout.ConfirmOrderPage();
     }
 
@@ -109,7 +109,7 @@ public class CheckoutTest extends TestBase {
     }
 
     @Test(priority = 15)
-    public void OrderEndTest() throws InterruptedException {
+    public void OrderEndTest() throws InterruptedException, ExceptionExistence {
         Checkout.OrderEndPage();
     }
 }

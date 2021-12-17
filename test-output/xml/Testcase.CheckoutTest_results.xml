@@ -4,84 +4,84 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="16,814">
+           time="17,000">
     <properties></properties>
 
 
 
             <testcase
-                name="BillingAddressTest"
-                time="0,614"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="ShippingAddressTest"
-                time="0,606"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="PaymentMethodTest"
-                time="0,600"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="OrderEndTest"
-                time="0,895"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="VerifyPreisBook2"
-                time="0,347"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
                 name="AddBook2ToCartTest"
-                time="2,135"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="ConfirmOrderTest"
-                time="0,601"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="UpdateCartTest"
-                time="2,206"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="EstimateShippingTest"
-                time="1,931"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="ShippingMethodTest"
-                time="0,600"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="AddBook1ToCartTest"
-                time="2,669"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="VerifyPreisBook1"
-                time="0,370"
-                classname="Testcase.CheckoutTest">
-            </testcase>
-            <testcase
-                name="successOrderTest"
-                time="1,054"
+                time="2,128"
                 classname="Testcase.CheckoutTest">
             </testcase>
             <testcase
                 name="ShoppingCardClickTest"
-                time="1,548"
+                time="1,563"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="ConfirmOrderTest"
+                time="0,613"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="OrderEndTest"
+                time="0,900"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="ShippingMethodTest"
+                time="0,602"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="successOrderTest"
+                time="0,845"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="EstimateShippingTest"
+                time="2,954"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="BillingAddressTest"
+                time="0,602"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="AddBook1ToCartTest"
+                time="2,588"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="UpdateCartTest"
+                time="1,637"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="ShippingAddressTest"
+                time="0,602"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="PreisBook2"
+                time="0,347"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="PaymentMethodTest"
+                time="0,599"
                 classname="Testcase.CheckoutTest">
             </testcase>
             <testcase
                 name="PaymentInformationTest"
-                time="0,638"
+                time="0,669"
+                classname="Testcase.CheckoutTest">
+            </testcase>
+            <testcase
+                name="PreisBook1"
+                time="0,351"
                 classname="Testcase.CheckoutTest">
             </testcase>
 </testsuite>
