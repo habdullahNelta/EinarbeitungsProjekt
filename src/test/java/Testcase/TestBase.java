@@ -65,7 +65,7 @@ public class TestBase {
     @Parameters({"browser"})
     public void StartDriver(@Optional("chrome") String browser) {
         Screenshot = new OpenFile();
-       if (browser.equalsIgnoreCase("chrome")) {
+     if (browser.equalsIgnoreCase("chrome")) {
          //   String chromePath = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
          //   System.setProperty("webdriver.chrome.driver", chromePath);
             WebDriverManager.chromedriver().setup();
@@ -105,7 +105,6 @@ public class TestBase {
 
 
           //  String Path = System.getProperty("user.dir") + "\\drivers\\phantomjs.exe";
-
           //  DesiredCapabilities des = new DesiredCapabilities();
           //  des.setJavascriptEnabled(true);
           //  des.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, Path);
