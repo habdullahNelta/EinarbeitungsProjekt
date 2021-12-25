@@ -1,17 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="EinarbeitungsProjekt"
            tests="17"
-           failures="0"
+           failures="1"
            errors="0"
            skipped="0"
-           time="18,587">
+           time="23,745">
     <properties></properties>
 
+            <testcase
+                name="PreisBook1"
+                time="0,205"
+                classname="Testcase.TestPlan">
+
+            <failure type="HelfMethoden.ExceptionInput" message="(null)">
+                <![CDATA[HelfMethoden.ExceptionInput
+                HelfMethoden.ElementTest.StringIsEmpty(ElementTest.java:22)Pages.VerifyPreisPage.VerifyTolalPreisBook1(VerifyPreisPage.java:54)Testcase.TestPlan.PreisBook1(TestPlan.java:58)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)java.base/java.lang.reflect.Method.invoke(Method.java:568)org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)java.base/java.util.ArrayList.forEach(ArrayList.java:1511)org.testng.TestRunner.privateRun(TestRunner.java:794)org.testng.TestRunner.run(TestRunner.java:596)org.testng.SuiteRunner.runTest(SuiteRunner.java:377)org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)org.testng.SuiteRunner.run(SuiteRunner.java:276)org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)org.testng.TestNG.runSuitesLocally(TestNG.java:1134)org.testng.TestNG.runSuites(TestNG.java:1063)org.testng.TestNG.run(TestNG.java:1031)com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+]]>
+            </failure>
+    </testcase>
 
 
             <testcase
+                name="BillingAddressTest"
+                time="0,596"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ShippingMethodTest"
+                time="0,608"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="LoginTest"
+                time="2,508"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
                 name="PreisBook2"
-                time="0,331"
+                time="0,375"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ConfirmOrderTest"
+                time="0,581"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="RegisterTest"
+                time="6,308"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="PaymentInformationTest"
+                time="0,639"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="OrderEndTest"
+                time="0,894"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="UpdateCartTest"
+                time="1,228"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="EstimateShippingTest"
+                time="3,145"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ShippingAddressTest"
+                time="0,609"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="ShoppingCardClickTest"
+                time="0,627"
+                classname="Testcase.TestPlan">
+            </testcase>
+            <testcase
+                name="successOrderTest"
+                time="2,055"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
@@ -21,77 +92,12 @@
             </testcase>
             <testcase
                 name="AddBook1ToCartTest"
-                time="1,544"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="RegisterTest"
-                time="1,927"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="LoginTest"
-                time="2,002"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="ShoppingCardClickTest"
-                time="0,525"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="EstimateShippingTest"
-                time="3,049"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="successOrderTest"
-                time="2,044"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="OrderEndTest"
-                time="0,901"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="ConfirmOrderTest"
-                time="0,614"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="UpdateCartTest"
-                time="1,131"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="PreisBook1"
-                time="0,348"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="BillingAddressTest"
-                time="0,598"
+                time="1,647"
                 classname="Testcase.TestPlan">
             </testcase>
             <testcase
                 name="AddBook2ToCartTest"
-                time="1,138"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="ShippingAddressTest"
-                time="0,600"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="ShippingMethodTest"
-                time="0,598"
-                classname="Testcase.TestPlan">
-            </testcase>
-            <testcase
-                name="PaymentInformationTest"
-                time="0,640"
+                time="1,123"
                 classname="Testcase.TestPlan">
             </testcase>
 </testsuite>

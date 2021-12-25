@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="1" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-12-13T14:15:57 MEZ" name="All Test Suite" finished-at="2021-12-13T14:15:57 MEZ" duration-ms="6">
+  <suite started-at="2021-12-22T17:15:07 MEZ" name="All Test Suite" finished-at="2021-12-22T17:15:10 MEZ" duration-ms="3163">
     <groups>
     </groups>
-    <test started-at="2021-12-13T14:15:57 MEZ" name="Login Test" finished-at="2021-12-13T14:15:57 MEZ" duration-ms="6">
+    <test started-at="2021-12-22T17:15:07 MEZ" name="Login Test" finished-at="2021-12-22T17:15:10 MEZ" duration-ms="3163">
       <class name="Testcase.LoginTest">
-        <test-method is-config="true" signature="StartDriver(java.lang.String)[pri:0, instance:Testcase.LoginTest@25e8eba3]" started-at="2021-12-13T14:15:54 MEZ" name="StartDriver" finished-at="2021-12-13T14:15:57 MEZ" duration-ms="3039" status="PASS">
+        <test-method is-config="true" signature="StartDriver(java.lang.String)[pri:0, instance:Testcase.LoginTest@6e362009]" started-at="2021-12-22T17:15:02 MEZ" name="StartDriver" finished-at="2021-12-22T17:15:07 MEZ" duration-ms="5093" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- StartDriver -->
-        <test-method is-config="true" signature="QuitDriver()[pri:0, instance:Testcase.LoginTest@25e8eba3]" started-at="2021-12-13T14:15:57 MEZ" name="QuitDriver" finished-at="2021-12-13T14:16:00 MEZ" duration-ms="3218" status="PASS">
+        <test-method signature="LoginTest1()[pri:0, instance:Testcase.LoginTest@6e362009]" started-at="2021-12-22T17:15:07 MEZ" name="LoginTest1" finished-at="2021-12-22T17:15:10 MEZ" duration-ms="3142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTest1 -->
+        <test-method is-config="true" signature="TearDown(org.testng.ITestResult)[pri:0, instance:Testcase.LoginTest@6e362009]" started-at="2021-12-22T17:15:10 MEZ" name="TearDown" finished-at="2021-12-22T17:15:10 MEZ" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LoginTest1 status=SUCCESS method=LoginTest.LoginTest1()[pri:0, instance:Testcase.LoginTest@6e362009] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method is-config="true" signature="QuitDriver()[pri:0, instance:Testcase.LoginTest@6e362009]" started-at="2021-12-22T17:15:10 MEZ" name="QuitDriver" finished-at="2021-12-22T17:15:11 MEZ" duration-ms="1246" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- QuitDriver -->

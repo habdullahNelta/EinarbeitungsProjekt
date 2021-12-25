@@ -1,6 +1,6 @@
 package Testcase;
 
-/*
+
 import HelfMethoden.OpenFile;
 import org.testng.TestNG;
 import javax.swing.*;
@@ -47,7 +47,7 @@ public class GUITest extends JFrame implements ActionListener {
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
         // Layout-Style defined: 2 columns, 10p distance
-        setLayout(new GridLayout(5, 2, 5, 5));
+        setLayout(new GridLayout(4, 2, 5, 5));
        // setMinimumSize(new Dimension(400, 150));
 
 
@@ -60,7 +60,7 @@ public class GUITest extends JFrame implements ActionListener {
         add(new JLabel(""));
         add(Eingabe);
         add(EXIT);
-        add(tfName);
+      //  add(tfName);
       //  add(tfName);
         setTitle("Register Test");
        // setResizable(false);
@@ -76,7 +76,7 @@ public class GUITest extends JFrame implements ActionListener {
         String TestLoction = System.getProperty("user.dir");
         List<String> suites = new ArrayList<String>();
         String IndexTest = (String) CompoBoxOfTestCases.getSelectedItem();
-        tfName.setText("jjjjjjjjjjj");
+      //  tfName.setText("jjjjjjjjjjj");
         if (e.getSource() == Eingabe) {
 
             switch (IndexTest) {
@@ -104,7 +104,7 @@ public class GUITest extends JFrame implements ActionListener {
             }
             Obj.setTestSuites(suites);
             Obj.run();
-            System.out.println(IndexTest);
+         //   System.out.println(IndexTest);
         }
         if (e.getSource() == ReportOpen) {
             File.OpenTestReport();
@@ -130,4 +130,4 @@ public class GUITest extends JFrame implements ActionListener {
 
     }
 
-}*/
+}

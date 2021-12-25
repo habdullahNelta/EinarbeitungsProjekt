@@ -10,10 +10,10 @@ import org.testng.annotations.Test;
 @Listeners(TestNGListener.class)
 public class RegisterTest extends TestBase {
 
-    RegisterPage Register;
+    RegisterPage Register1;
 
     @Test public void RegisterTest1() throws ExceptionInput, ExceptionExistence {
-        Register = new RegisterPage(driver);
-        Register.Register();
+        Register1 = new RegisterPage(driver);
+        Register1.Register();
     }
 }

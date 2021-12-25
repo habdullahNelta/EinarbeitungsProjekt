@@ -4,12 +4,15 @@ import HelfMethoden.FormatedDate;
 import HelfMethoden.LoadData;
 import HelfMethoden.OpenFile;
 import HelfMethoden.TestNGListener;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
@@ -62,34 +65,56 @@ public class TestBase {
     @Parameters({"browser"})
     public void StartDriver(@Optional("chrome") String browser) {
         Screenshot = new OpenFile();
-        if (browser.equalsIgnoreCase("chrome")) {
-            String chromePath = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
-            System.setProperty("webdriver.chrome.driver", chromePath);
+       if (browser.equalsIgnoreCase("chrome")) {
+         //   String chromePath = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
+         //   System.setProperty("webdriver.chrome.driver", chromePath);
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("chrome-headless")) {
-            String chromePath2 = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
-            System.setProperty("webdriver.chrome.driver", chromePath2);
-
+           // String chromePath2 = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
+          //  System.setProperty("webdriver.chrome.driver", chromePath2);
+            WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
             options.addArguments("--window-size=1920,1080");
             driver = new ChromeDriver(options);
 
         } else if (browser.equalsIgnoreCase("firefox")) {
-            String Path = System.getProperty("user.dir") + "\\drivers\\geckodriver.exe";
-            System.setProperty("webdriver.gecko.driver", Path);
+           // String Path = System.getProperty("user.dir") + "\\drivers\\geckodriver.exe";
+           // System.setProperty("webdriver.gecko.driver", Path);
+            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
 
-        } else if (browser.equalsIgnoreCase("headless")) {
-            String Path = System.getProperty("user.dir") + "\\drivers\\phantomjs.exe";
+        } else if (browser.equalsIgnoreCase("ie")) {
+            WebDriverManager.iedriver().setup();
+            driver = new InternetExplorerDriver();
+            //TODO
 
-            DesiredCapabilities des = new DesiredCapabilities();
-            des.setJavascriptEnabled(true);
-            des.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, Path);
-            String[] phantomJsArgument = {"--webdriver-loglevel=NONE", "--web-security=no", "--ignore-ssl-errors=yes"};
-            des.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, phantomJsArgument);
-            driver = new PhantomJSDriver(des);
+        } else if (browser.equalsIgnoreCase("Edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+            //TODO
+
+        } else if (browser.equalsIgnoreCase("headless")) {
+
+            WebDriverManager.iedriver().setup();
+            ChromeOptions options=new ChromeOptions();
+            options.addArguments("--headless");
+            options.addArguments("--window-size=1920,1080");
+            driver =new  ChromeDriver(options);
+
+
+          //  String Path = System.getProperty("user.dir") + "\\drivers\\phantomjs.exe";
+
+          //  DesiredCapabilities des = new DesiredCapabilities();
+          //  des.setJavascriptEnabled(true);
+          //  des.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, Path);
+          //  String[] phantomJsArgument = {"--webdriver-loglevel=NONE", "--web-security=no", "--ignore-ssl-errors=yes"};
+          //  des.setCapability(PhantomJSDriverService.PHANTOMJS_CLI_ARGS, phantomJsArgument);
+          //  driver = new PhantomJSDriver(des);
         }
+
+
         driver.navigate().to(WebAppPath);
         driver.manage().window().maximize();
         // driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
