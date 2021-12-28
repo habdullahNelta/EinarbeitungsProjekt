@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 //Test von CheckoutTest mit PreiseTest
 @Listeners(TestNGListener.class)
 public class CheckoutTest extends TestBase {
@@ -22,7 +24,7 @@ public class CheckoutTest extends TestBase {
 
 
     @BeforeTest
-    public void Logintest() throws ExceptionInput, InterruptedException, ExceptionExistence {
+    public void Logintest() throws ExceptionInput, InterruptedException, ExceptionExistence, IOException {
         Login = new LoginPage(driver);
         Login.login();
     }

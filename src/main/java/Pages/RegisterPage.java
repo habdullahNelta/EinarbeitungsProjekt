@@ -25,7 +25,7 @@ public class RegisterPage extends MainPage {
         super(driver);
     }
 
-    @FindBy(className = "ico-register")
+    @FindBy(className = "ico-register")///
     WebElement RegisterMenu;
 
     @FindBy(id = "gender-male")

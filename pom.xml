@@ -8,12 +8,12 @@
     <artifactId>EinarbeitungsProjekt</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-   <properties>
+    <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-       <java.version>17</java.version>
-       <suiteXmlFile>testng.xml</suiteXmlFile>
-       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>17</java.version>
+        <suiteXmlFile>testng.xml</suiteXmlFile>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
 
@@ -21,13 +21,13 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.1.0</version>
+            <version>4.1.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>4.1.0</version>
+            <version>4.1.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -50,13 +50,13 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>4.4.3</version>
+            <version>5.0.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>phantomjsdriver</artifactId>
-            <version>1.4.4</version>
+            <version>1.5.0</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -82,19 +82,19 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.5</version>
+            <version>1.7.32</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.6.4</version>
+            <version>1.7.32</version>
         </dependency>
         <dependency>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <type>maven-plugin</type>
-    </dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version>
+            <type>maven-plugin</type>
+        </dependency>
 
         <!--
  <dependency>
@@ -154,49 +154,56 @@
         -->
     </dependencies>
 
-<!--
-  <build>
+    <!--
+      <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.9.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M5</version>
+
+                </plugin>
+            </plugins>
+        </build>
+    -->
+
+
+    <build>    <!--für Github und jenkins-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.9.1</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
-
+                <configuration>
+                    <suiteXmlFiles>
+                        <!--<suiteXmlFile>GUI.xml</suiteXmlFile>-->
+                        <!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
+                        <!--für Github-->
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
         </plugins>
+        <testResources><!--für jenkins-->
+            <testResource>
+                <directory>src/main/java/HelfMethoden</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
     </build>
--->
-
-
-
-<build>
-<plugins>
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.1</version>
-
-    <configuration>
-        <source>1.8</source>
-        <target>1.8</target>
-    </configuration>
-</plugin>
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M5</version>
-        <configuration>
-            <suiteXmlFiles>
-                <suiteXmlFile>testng.xml</suiteXmlFile>
-            </suiteXmlFiles>
-        </configuration>
-    </plugin>
-</plugins>
-</build>
 
 </project>

@@ -12,8 +12,8 @@ public class TestNGListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("\n"+"--------------------Test Start "+  result.getName());
-       // System.out.println("\n"+"Test Start: " + result.getName());
+        System.out.println("\n"+">--------------------------------------------------<");
+        System.out.println("Test Start: "+  result.getName());
     }
 
     @Override
@@ -45,23 +45,17 @@ public class TestNGListener implements ITestListener {
     @Override
     public void onStart(ITestContext context) {
         ITestListener.super.onStart(context);
-        System.out.println("====================Start Test  "+ context.getName()+"====================");
+        System.out.println("\n"+"====================<Start Test "+ context.getName()+">====================");
        // System.out.println("on Start: " + context.getName());
     }
 
     @Override
     public void onFinish(ITestContext context) {
         ITestListener.super.onFinish(context);
-        System.out.println("\n"+"====================Finish Test  "+ context.getName()+"===================");
+        System.out.println("\n"+"====================<Finish Test "+ context.getName()+">==================="+"\n");
         //System.out.println("\n"+"on Finish: " + context.getName());
        // result.getStatus();
 
     }
-   /* public void  EndResult(ITestContext context) {
-        //ITestListener.super.onFinish(context);
-        System.out.println("\n"+ context.getPassedTests());
-        //System.out.println("\n"+"on Finish: " + context.getName());
-        // result.getStatus();
 
-    }*/
 }

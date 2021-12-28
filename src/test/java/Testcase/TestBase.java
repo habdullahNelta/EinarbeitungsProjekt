@@ -23,6 +23,9 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static HelfMethoden.Input.InputString1;
@@ -59,11 +62,12 @@ public class TestBase {
     }
 */
     public static WebDriver driver;
-    public String WebAppPath = LoadData.userData.getProperty("WebAppPath");
+
+    public String WebAppPath = LoadData.userData.getProperty("WebAppPath");  //ohne Jenkins
 
     @BeforeSuite
     @Parameters({"browser"})
-    public void StartDriver(@Optional("chrome") String browser) {
+    public void StartDriver(@Optional("chrome") String browser) throws IOException {
         Screenshot = new OpenFile();
      if (browser.equalsIgnoreCase("chrome")) {
          //   String chromePath = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
@@ -113,10 +117,14 @@ public class TestBase {
           //  driver = new PhantomJSDriver(des);
         }
 
+     //  driver.navigate().to(System.getProperty("name"));//für jenkins sehe auch pom.xml
+     /*  Properties prop = new Properties();//für jenkins sehe auch pom.xml
+       prop.load(this.getClass().getResourceAsStream("/TestData.properties"));//für jenkins sehe auch pom.xml
+      String WebAppPath = prop.getProperty("WebAppPath");//für jenkins sehe auch pom.xml*/
 
         driver.navigate().to(WebAppPath);
         driver.manage().window().maximize();
-        // driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
     }
 
     @AfterMethod

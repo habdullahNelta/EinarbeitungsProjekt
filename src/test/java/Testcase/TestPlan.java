@@ -8,6 +8,8 @@ import Pages.*;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 /**
  * @author Hasan Abdullah
  */
@@ -28,7 +30,7 @@ public class TestPlan extends TestBase {
     }
 
     @Test(priority = 2,groups = "Login")
-    public void LoginTest() throws ExceptionInput, InterruptedException, ExceptionExistence {
+    public void LoginTest() throws ExceptionInput, InterruptedException, ExceptionExistence, IOException {
         Login = new LoginPage(driver);
         Login.login();
     }

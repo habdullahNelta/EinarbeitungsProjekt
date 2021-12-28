@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+
+
 //für laden der Daten bzw. Werte von "TestData.properties"
 public class LoadData {
     //speicherort von "TestData.properties"
@@ -25,6 +27,8 @@ public class LoadData {
         }
         return pro ;
     }
+
+
 /*
     private static void WriteProperties(String path,String Value)  {
         //TODO
