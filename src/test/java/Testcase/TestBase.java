@@ -161,7 +161,7 @@ public class TestBase {
     @AfterSuite
     public void QuitDriver() throws InterruptedException {
         Thread.sleep(1000);
-       // driver.quit();
+       driver.quit();
        // Report = new OpenFile();
       //  Report.OpenTestReport();
     }
