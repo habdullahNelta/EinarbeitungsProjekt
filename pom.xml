@@ -12,6 +12,8 @@
             <id>Hasan</id>
             <name>Hasan Abdullah</name>
             <email>habdullah@nelta.de</email>
+            <organization>Nelta</organization>
+            <organizationUrl>https://nelta.de/</organizationUrl>
         </developer>
     </developers>
     <properties>
