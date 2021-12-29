@@ -140,7 +140,16 @@ public class TestBase {
                 //result.getName() will return name of test case so that screenshot name will be same
                 Datum = new FormatedDate();
                 FileHandler.copy(source, new File("./Screenshots/" + result.getName() + "_" + Datum.getFormatedDate() + ".png"));
-                System.out.println("Screenshot taken");
+
+                System.out.println("*****************************************************************************" +
+                        "****************************************************************");
+                System.out.println("Screenshot aufgenommen");
+                System.out.println("Screenshot name: "+
+                        result.getName() + "_" + Datum.getFormatedDate() + ".png");
+                System.out.println("Screenshot Speicherort ==> " +System.getProperty("user.dir") + "/Screenshots/" +
+                        result.getName() + "_" + Datum.getFormatedDate() + ".png");
+                System.out.println("*********************************************************" +
+                        "************************************************************************************"+"\n"+"\n");
                 Screenshot.OpenScreenshot();
             } catch (Exception e) {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
@@ -152,8 +161,8 @@ public class TestBase {
     @AfterSuite
     public void QuitDriver() throws InterruptedException {
         Thread.sleep(1000);
-        driver.quit();
-        Report = new OpenFile();
-        Report.OpenTestReport();
+       // driver.quit();
+       // Report = new OpenFile();
+      //  Report.OpenTestReport();
     }
 }

@@ -110,8 +110,8 @@ public class CheckoutTest extends TestBase {
         Checkout.successOrderPage();
     }
 
-    @Test(priority = 15)
+   /* @Test(priority = 15)
     public void OrderEndTest() throws InterruptedException, ExceptionExistence {
         Checkout.OrderEndPage();
-    }
+    }*/
 }

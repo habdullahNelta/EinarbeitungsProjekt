@@ -53,7 +53,7 @@ public class CheckoutPage extends MainPage {
     @FindBy(xpath = "//*[@id=\"confirm-order-buttons-container\"]/input")
     WebElement ConfirmOrderButton;
 
-    @FindBy(xpath = " /html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/div[1]/strong")
+    @FindBy(xpath = "/html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/div[1]")
     WebElement successOrderText;
 
     @FindBy(xpath = " /html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/div[2]/input")
@@ -124,8 +124,8 @@ public class CheckoutPage extends MainPage {
 
     public void successOrderPage() throws InterruptedException {
 
+      //  successOrderText.isDisplayed();
         Thread.sleep(2000);
-        successOrderText.isDisplayed();
         Assert.assertEquals(successOrderText.getText(),
                 "Your order has been successfully processed!");
 
