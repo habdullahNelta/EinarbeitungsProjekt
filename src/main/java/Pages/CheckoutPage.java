@@ -65,11 +65,7 @@ public class CheckoutPage extends MainPage {
         Select CountryMenu = new Select(driver.findElement(By.id("CountryId")));
         StringIsEmpty(Country,"Country");
         CountryMenu.selectByVisibleText(Country);
-        /*  if (Country.isEmpty()) {
-            throw new ExceptionInput("Country");
-        } else {
-            CountryMenu.selectByVisibleText(Country);
-        }*/
+
         Select StateProvince1 = new Select(driver.findElement(By.id("StateProvinceId")));
         Thread.sleep(500);
         StringIsEmpty(StateProvince,"StateProvince");
