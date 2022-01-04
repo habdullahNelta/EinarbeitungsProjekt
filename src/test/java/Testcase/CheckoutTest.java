@@ -74,9 +74,9 @@ public class CheckoutTest extends TestBase {
         Checkout = new CheckoutPage(driver);
         Checkout.EstimateShippingPage(driver);
     }
-
-    @Test(priority = 8)
+    @Test (priority = 8)
     public void BillingAddressTest() throws InterruptedException, ExceptionExistence {
+        //Checkout = new CheckoutPage(driver);
         Checkout.BillingAddressPage();
     }
 
