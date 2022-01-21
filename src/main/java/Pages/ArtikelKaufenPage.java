@@ -23,10 +23,10 @@ public class ArtikelKaufenPage extends MainPage {
     @FindBy(xpath = "/html/body/div[4]/div[1]/div[2]/ul[1]/li[1]/a")
     WebElement openBooksMenu;
 
-    @FindBy(xpath = "/html/body/div[4]/div[1]/div[4]/div[2]/div[2]/div[2]/div[3]/div[1]/div/div[2]/div[3]/div[2]")
+    @FindBy(xpath = "/html[1]/body[1]/div[4]/div[1]/div[4]/div[2]/div[2]/div[2]/div[3]/div[1]/div[1]/div[2]/div[3]/div[2]/input[1]")
     WebElement AddBook1ToCart;
 
-    @FindBy(xpath = "/html/body/div[4]/div[1]/div[4]/div[2]/div[2]/div[2]/div[3]/div[3]/div/div[2]/div[3]/div[2]/input")
+    @FindBy(xpath = "/html[1]/body[1]/div[4]/div[1]/div[4]/div[2]/div[2]/div[2]/div[3]/div[5]/div[1]/div[2]/div[3]/div[2]/input[1]")
     WebElement AddBook2ToCart;
 
     @FindBy(xpath = "/html/body/div[4]/div[1]/div[4]/div/div/div[2]/div/form/table/tbody/tr[1]/td[5]/input")
@@ -43,7 +43,7 @@ public class ArtikelKaufenPage extends MainPage {
 
     //verschieben book1 in den Warenkorb
     public void AddBook1ToCartPage() throws InterruptedException, ExceptionExistence {
-
+        Thread.sleep(3000);
         ElementTestClick(openBooksMenu, "openBooksMenu");
 
         ElementTestClick(AddBook1ToCart, "AddBook1ToCart");
@@ -53,10 +53,12 @@ public class ArtikelKaufenPage extends MainPage {
         AddBookToCartisDisplayed.isDisplayed();
         Assert.assertEquals(AddBookToCartisDisplayed.getText(),
                 "The product has been added to your shopping cart");
+        Thread.sleep(2000);
     }
 
     //verschieben book2 in den Warenkorb
     public void AddBooks2ToCartPage() throws InterruptedException {
+        Thread.sleep(1000);
         AddBookToCartisDisplayed.isDisplayed();
         AddBook2ToCart.click();
         Thread.sleep(1000);
@@ -64,11 +66,12 @@ public class ArtikelKaufenPage extends MainPage {
         AddBookToCartisDisplayed.isDisplayed();
         Assert.assertEquals(AddBookToCartisDisplayed.getText(),
                 "The product has been added to your shopping cart");
+        Thread.sleep(2000);
     }
 
     //book1 zweimal bestellen mit update des Warenkorbs
     public void UpdateCartPage() throws InterruptedException, ExceptionExistence, ExceptionInput {
-        Thread.sleep(200);
+        Thread.sleep(2000);
         StringIsEmpty(QuantityBook1, "QuantityBook1");
         //System.out.println("moin");
         Book1Doppelt.clear();

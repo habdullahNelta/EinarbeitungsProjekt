@@ -53,14 +53,14 @@ public class CheckoutTest extends TestBase {
 
     @Test(priority = 4)
     public void PreisBook1() throws InterruptedException, ExceptionInput {
-        Thread.sleep(200);
+        Thread.sleep(500);
         Preise.VerifyTolalPreisBook1();
     }
 
     @Test(priority = 5)
     public void PreisBook2() throws InterruptedException {
-        Thread.sleep(200);
-        Preise.VerifyTolalPreisBook2(24);
+        Thread.sleep(500);
+        Preise.VerifyTolalPreisBook2(10);
     }
 
     @Test(priority = 6)
